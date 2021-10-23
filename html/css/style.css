@@ -412,4 +412,77 @@ body {
   flex-basis: 80px;
 }
 
+.contact-form {
+  background: #C3E8E7 url(../img/contact-bg.png) no-repeat center center;
+  padding: 75px 0 50px;
+}
+.contact-form-heading {
+  width: 670px;
+}
+.contact-form-heading h2 {
+  font-family: "Playfair Display", "Roboto", sans-serif;
+  font-size: 40px;
+  line-height: 56px;
+  letter-spacing: 1px;
+  color: #262E38;
+  text-transform: uppercase;
+  margin: 0;
+}
+.contact-form-heading p {
+  font-size: 20px;
+  line-height: 28px;
+  color: #443E3E;
+  margin: 15px 0 0;
+}
+.contact-form .warning {
+  font-size: 14px;
+  line-height: 20px;
+  color: #999999;
+  text-align: center;
+  margin-top: 10px;
+}
+.contact-form form {
+  width: 515px;
+  margin-top: 40px;
+}
+.contact-form form input[type=submit] {
+  width: 100%;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+  padding: 15px 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 35px;
+}
+.contact-form form input[type=submit]:hover {
+  cursor: pointer;
+}
+.contact-form form p {
+  display: flex;
+  column-gap: 40px;
+  margin: 0;
+}
+.contact-form form p span {
+  flex-basis: 50%;
+}
+.contact-form form p span input:not([type=submit]) {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  color: #262E38;
+  border: 1px solid #EEEEEE;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+.contact-form form p span input:not([type=submit])::-moz-placeholder {
+  color: #CCCCCC;
+  opacity: 1;
+}
+.contact-form form p span input:not([type=submit])::-webkit-input-placeholder {
+  color: #CCCCCC;
+  opacity: 1;
+}
+
 /*# sourceMappingURL=style.css.map */
