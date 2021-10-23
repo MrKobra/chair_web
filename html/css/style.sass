@@ -1,3 +1,129 @@
 @import "reset.sass"
 @import "../fonts/fonts.css"
 @import "sittings.sass"
+
+/* Top Header */
+
+.top-header
+  background: $black
+  padding: 12px 0
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-menu
+    ul
+      padding: 0
+      margin: 0
+      display: flex
+      li
+        list-style: none
+        font-size: 14px
+        line-height: 17px
+        a
+          color: #ffffff
+        &:not(:last-child)
+          margin-right: 20px
+  &-phone
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+        position: relative
+        font-size: 14px
+        line-height: 17px
+        padding-left: 24px
+        a
+          color: #ffffff
+        &:before
+          content: ''
+          width: 14px
+          height: 20px
+          background: url(../img/smartphone.png) no-repeat center center
+          left: 0
+          top: 50%
+          margin-top: -7px
+          position: absolute
+
+/* Bottom Header */
+.bottom-header
+  padding: 30px 0
+  .container
+    display: flex
+    align-items: center
+  .logo
+    flex-basis: 312px
+    img
+      height: auto
+  &-search
+    flex-basis: 550px
+    form
+      display: flex
+    input
+      width: calc(100% - 70px)
+      height: 40px
+      background: #F0F0F0
+      font-size: 14px
+      color: $black
+      border: none
+      padding: 0 15px
+      box-sizing: border-box
+      &::-moz-placeholder
+        color: rgba(61, 61, 61, 0.5)
+        opacity: 1
+      &::-webkit-input-placeholder
+        color: rgba(61, 61, 61, 0.5)
+        opacity: 1
+    button
+      width: 70px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+      background: $blue
+      border: none
+      padding: 0
+      box-sizing: border-box
+      &:hover
+        cursor: pointer
+  &-cart
+    flex-basis: 358px
+    text-align: right
+    &-container
+      display: inline-block
+      text-align: left
+      padding-left: 47px
+      position: relative
+      &:before
+        content: ''
+        width: 42px
+        height: 42px
+        background: url(../img/shopping-cart.png) no-repeat center center
+        position: absolute
+        left: 0
+        top: 50%
+        margin-top: -21px
+    p
+      font-size: 14px
+      line-height: 16px
+      color: $black
+      margin: 0
+    strong
+      font-size: 14px
+      line-height: 16px
+      font-weight: 500
+    span
+      font-size: 10px
+      color: #ffffff
+      background: $red
+      display: flex
+      width: 16px
+      height: 16px
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      position: absolute
+      border: 2px solid #ffffff
+      left: -4px
+      top: -11px
