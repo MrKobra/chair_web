@@ -176,4 +176,40 @@ body {
   top: -11px;
 }
 
+/* Cat Nav */
+.cat-nav-container {
+  border: 1px solid #EEEEEE;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
+  padding: 18px 30px;
+}
+.cat-nav ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cat-nav ul li {
+  list-style: none;
+}
+.cat-nav ul li a {
+  color: #262E38;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+}
+.cat-nav ul li:not(:last-child) {
+  margin-right: 28px;
+}
+.cat-nav ul li:not(:last-child) a span {
+  margin-left: 7px;
+}
+.cat-nav ul li:last-child a {
+  color: #B3383B;
+}
+.cat-nav ul li:last-child a span {
+  margin-right: 15px;
+}
+
 /*# sourceMappingURL=style.css.map */
