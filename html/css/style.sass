@@ -132,7 +132,7 @@
 .cat-nav
   &-container
     border: 1px solid #EEEEEE
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07)
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
     padding: 18px 30px
   ul
     padding: 0
@@ -610,7 +610,7 @@
         color: $black
         position: relative
         padding-right: 35px
-        display: inline-bloc
+        display: inline-block
         &:after
           content: '/'
           color: $black
@@ -619,3 +619,308 @@
           position: absolute
           top: 2px
           right: 14px
+
+.catalog
+  margin-top: 20px
+  padding-bottom: 150px
+  .container
+    display: flex
+    flex-direction: row-reverse
+  &-container 
+    flex-basis: 910px
+    .items
+      &-card
+        flex-basis: calc(33% - 17px)
+  &-sort
+    text-align: right
+    .jq-selectbox
+      &.focused
+        .jq-selectbox__select
+          border: none
+      &__select
+        box-shadow: none
+        background: transparent
+        border-radius: 0
+        border: none
+        font-size: 12px
+        line-height: 14px
+        color: $black
+        font-family: $mFont, $hFont, sans-serif
+        text-shadow: none
+        height: auto
+        padding: 0 20px
+        width: 165px
+        box-sizing: border-box
+        &-text
+          padding-right: 9px
+          box-sizing: border-box
+      &__trigger
+        width: 19px
+        height: 11px
+        top: 2px
+        border: none
+        background: url(../img/catalog-sort.png) no-repeat center center
+        &-arrow
+          display: none
+      &__dropdown
+        margin: 6px 0 0
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+        ul
+          padding: 10px 0
+          li
+            padding: 10px 20px
+            font-size: 12px
+            line-height: 14px
+            color: $black
+            font-family: $mFont, $hFont, sans-serif
+            &:hover
+              background: transparent
+            &.selected
+              background: transparent
+            &.disabled
+              color: $grey
+  .show-more
+    text-align: center
+    margin-top: 50px
+    a
+      width: calc(100% - 80px)
+      border-radius: 10px
+      font-size: 16px
+      font-weight: 500
+      padding: 14px 0
+  &-page-nav
+    margin-top: 35px
+    align-items: center
+    display: flex
+    justify-content: space-between
+    padding: 0 40px
+    .page-nav
+      margin: 0
+      display: flex
+      align-items: center
+      position: relative
+      padding: 0 9px 0 43px
+      li
+        list-style: none
+        font-size: 16px
+        line-height: 24px
+        color: $grey
+        &:not(.current-page)
+          margin-right: 34px
+        &.current-page
+          border: 1px solid #EEEEEE
+          padding: 4px 11px
+          border-radius: 6px
+          margin-right: 22px
+          color: $black
+        a
+          color: $grey
+        &.next, &.prev
+          width: 9px
+          height: 16px
+          background: url(../img/page-nav-arrow.png) no-repeat center center
+          position: absolute
+          top: 9px
+          margin: 0
+        &.next
+          right: 0
+        &.prev
+          left: 0
+          transform: rotate(-180deg)
+  &-items
+    &-count
+      span
+        color: $grey
+        font-size: 16px
+        line-height: 24px
+      .jq-selectbox
+        &.focused
+          .jq-selectbox__select
+            border: none
+        &__select
+          box-shadow: none
+          background: transparent
+          border-radius: 0
+          width: 50px
+          border: none
+          font-size: 16px
+          line-height: 24px
+          font-family: $mFont, $hFont, sans-serif
+          text-shadow: none
+          height: auto
+          padding: 0 29px 0 0
+          box-sizing: border-box
+          &-text
+            box-sizing: border-box
+            color: $grey
+        &__trigger
+          width: 24px
+          height: 24px
+          top: 0
+          border: none
+          background: url(../img/items-count-arrow.png) no-repeat center center
+          &-arrow
+            display: none
+        &__dropdown
+          width: 65px
+          margin: 6px 0 0
+          left: -17px
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+          ul
+            padding: 5px 0
+            li
+              padding: 5px 15px
+              font-size: 16px
+              color: $black
+              font-family: $mFont, $hFont, sans-serif
+              &:hover
+                background: transparent
+              &.selected
+                background: transparent
+              &.disabled
+                color: $grey
+  &-sidebar
+    flex-basis: calc(100% - 910px)
+    padding-right: 120px
+    box-sizing: border-box
+    &-header
+      font-weight: 700
+      font-size: 18px
+      line-height: 22px
+      color: #384255
+    &-slider
+      &:not(:first-child)
+        margin-top: 36px
+      p
+        display: flex
+        justify-content: space-between
+        column-gap: 23px
+        span
+          flex-basis: 50%
+          position: relative
+          &:first-child
+            &:before
+              content: ''
+              width: 15px
+              height: 1px
+              background: rgba(133, 143, 164, 0.5)
+              border-radius: 1px
+              top: 50%
+              right: -19px
+              position: absolute
+        .jq-number
+          padding: 0
+          &.focused
+            .jq-number__field
+              border: 1px solid rgba(133, 143, 164, 0.2)
+          &__spin
+            display: none
+          &__field
+            width: 100%
+            border: 1px solid rgba(133, 143, 164, 0.2)
+            border-radius: 4px
+            box-shadow: none
+      .catalog-slider
+        margin-top: 26px
+        height: 2px
+        background: $grey
+        border: none
+        width: calc(100% - 15px)
+        margin-left: 9px
+        .ui-slider
+          &-range
+            background: $red
+          &-handle
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            border: 2px solid $red
+            box-sizing: border-box
+        .ui-state-active
+          background: $red
+      .catalog-sidebar-body
+        margin-top: 12px
+    &-checkbox
+      margin-top: 30px
+      border-top: 1px solid rgba(133, 143, 164, 0.2)
+      &.active
+        .catalog-sidebar-header
+          span:after
+            transform: rotate(180deg)
+      .catalog-sidebar-body
+        display: none
+      .catalog-sidebar
+        &-header
+          padding-top: 31px
+          &:hover
+            cursor: pointer
+          span
+            position: relative
+            padding-right: 29px
+            display: inline-block
+            &:after
+              content: ''
+              width: 24px
+              height: 24px
+              background: url(../img/items-count-arrow.png) no-repeat center center
+              position: absolute
+              right: 0
+              top: 50%
+              margin-top: -12px
+              transiton: all .2s linear
+      .show-full-filter
+        color: $black
+        opacity: .8
+        font-size: 16px
+        line-height: 23px
+        margin-top: 12px
+        display: inline-block
+    &-row
+      margin-top: 30px
+      &.checked
+        label 
+          &:after
+            display: block
+      input[type=checkbox]
+        display: none
+      label
+        font-size: 16px
+        color: #443e3e
+        line-height: 23px
+        position: relative
+        padding-left: 24px
+        &:before
+          content: ''
+          width: 12px
+          height: 12px
+          box-sizing: border-box
+          border: 1px solid #858FA4
+          border-radius: 2px
+          position: absolute
+          left: 0
+          top: 50%
+          margin-top: -6px
+        &:after
+          content: ''
+          width: 12px
+          height: 12px
+          border-radius: 2px
+          background: $blue url(../img/checkox-arrow.png) no-repeat center center
+          position: absolute
+          left: 0
+          top: 50%
+          margin-top: -6px
+          display: none
+    &-btn
+      margin-top: 30px
+      border-top: 1px solid rgba(133, 143, 164, 0.2)
+      padding-top: 30px
+      a
+        width: 110px
+        background: transparent
+        border: 1px solid $red
+        color: $red
+        border-radius: 4px
+  .text-block
+    .container
+      display: block

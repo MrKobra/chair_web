@@ -8,6 +8,9 @@
     <title>Проект</title>
     <link rel="stylesheet" href="lib/slick/slick.css">
     <link rel="stylesheet" href="lib/slick/slick-theme.css">
+    <link rel="stylesheet" href="lib/ui-slider/jquery-ui.css">
+    <link rel="stylesheet" href="lib/form-styler/jquery.formstyler.css">
+    <link rel="stylesheet" href="lib/form-styler/jquery.formstyler.theme.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -78,6 +81,499 @@
     </div>
 </div>
 
+<div class="catalog">
+    <div class="container">
+        <div class="catalog-container">
+            <div class="catalog-sort">
+                <select name="" id="catalog-sort">
+                    <option disabled selected>Сортировать</option>
+                    <option value="">по убыванию цены</option>
+                    <option value="">по возрастанию цены</option>
+                    <option value="">по популярности</option>
+                </select>
+            </div>
+            <div class="items-container">
+                <div class="items-card">
+                    <div class="items-card-container">
+                        <div class="items-card-img">
+                            <img src="img/product.png" alt="">
+                        </div>
+                        <h3>Lotus S10 экокожа красный</h3>
+                        <div class="items-card-cat">
+                            Геймерские кресла
+                        </div>
+                        <div class="items-card-price">
+                            <p>19 300₽</p>
+                        </div>
+                        <div class="items-card-hidden">
+                            <div class="items-card-size">
+                                <p>Размеры</p>
+                                <div class="items-card-size-container">
+                                    <div class="items-card-size-column">
+                                        <span>Ширина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Глубина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Высота</span>
+                                        <p>77 см</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-card-addToCart">
+                                <a href="#" class="btn">Добавить в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-card new">
+                    <div class="items-card-info">
+                        <span>Новинка</span>
+                    </div>
+                    <div class="items-card-container">
+                        <div class="items-card-img">
+                            <img src="img/product.png" alt="">
+                        </div>
+                        <h3>Lotus S10 экокожа красный</h3>
+                        <div class="items-card-cat">
+                            Геймерские кресла
+                        </div>
+                        <div class="items-card-price">
+                            <p>19 300₽</p>
+                        </div>
+                        <div class="items-card-hidden">
+                            <div class="items-card-size">
+                                <p>Размеры</p>
+                                <div class="items-card-size-container">
+                                    <div class="items-card-size-column">
+                                        <span>Ширина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Глубина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Высота</span>
+                                        <p>77 см</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-card-addToCart">
+                                <a href="#" class="btn">Добавить в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-card sale">
+                    <div class="items-card-info">
+                        <span>Распродажа</span>
+                    </div>
+                    <div class="items-card-container">
+                        <div class="items-card-img">
+                            <img src="img/product.png" alt="">
+                        </div>
+                        <h3>Lotus S10 экокожа красный</h3>
+                        <div class="items-card-cat">
+                            Геймерские кресла
+                        </div>
+                        <div class="items-card-price">
+                            <p>19 300₽ <strike>35 000₽ </strike></p>
+                        </div>
+                        <div class="items-card-hidden">
+                            <div class="items-card-size">
+                                <p>Размеры</p>
+                                <div class="items-card-size-container">
+                                    <div class="items-card-size-column">
+                                        <span>Ширина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Глубина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Высота</span>
+                                        <p>77 см</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-card-addToCart">
+                                <a href="#" class="btn">Добавить в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-card last">
+                    <div class="items-card-info">
+                        <span>Осталось 1 шт.</span>
+                    </div>
+                    <div class="items-card-container">
+                        <div class="items-card-img">
+                            <img src="img/product.png" alt="">
+                        </div>
+                        <h3>Lotus S10 экокожа красный</h3>
+                        <div class="items-card-cat">
+                            Геймерские кресла
+                        </div>
+                        <div class="items-card-price">
+                            <p>19 300₽ <strike>35 000₽ </strike></p>
+                        </div>
+                        <div class="items-card-hidden">
+                            <div class="items-card-size">
+                                <p>Размеры</p>
+                                <div class="items-card-size-container">
+                                    <div class="items-card-size-column">
+                                        <span>Ширина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Глубина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Высота</span>
+                                        <p>77 см</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-card-addToCart">
+                                <a href="#" class="btn">Добавить в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-card">
+                    <div class="items-card-container">
+                        <div class="items-card-img">
+                            <img src="img/product.png" alt="">
+                        </div>
+                        <h3>Lotus S10 экокожа красный</h3>
+                        <div class="items-card-cat">
+                            Геймерские кресла
+                        </div>
+                        <div class="items-card-price">
+                            <p>19 300₽</p>
+                        </div>
+                        <div class="items-card-hidden">
+                            <div class="items-card-size">
+                                <p>Размеры</p>
+                                <div class="items-card-size-container">
+                                    <div class="items-card-size-column">
+                                        <span>Ширина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Глубина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Высота</span>
+                                        <p>77 см</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-card-addToCart">
+                                <a href="#" class="btn">Добавить в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-card new">
+                    <div class="items-card-info">
+                        <span>Новинка</span>
+                    </div>
+                    <div class="items-card-container">
+                        <div class="items-card-img">
+                            <img src="img/product.png" alt="">
+                        </div>
+                        <h3>Lotus S10 экокожа красный</h3>
+                        <div class="items-card-cat">
+                            Геймерские кресла
+                        </div>
+                        <div class="items-card-price">
+                            <p>19 300₽</p>
+                        </div>
+                        <div class="items-card-hidden">
+                            <div class="items-card-size">
+                                <p>Размеры</p>
+                                <div class="items-card-size-container">
+                                    <div class="items-card-size-column">
+                                        <span>Ширина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Глубина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Высота</span>
+                                        <p>77 см</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-card-addToCart">
+                                <a href="#" class="btn">Добавить в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-card sale">
+                    <div class="items-card-info">
+                        <span>Распродажа</span>
+                    </div>
+                    <div class="items-card-container">
+                        <div class="items-card-img">
+                            <img src="img/product.png" alt="">
+                        </div>
+                        <h3>Lotus S10 экокожа красный</h3>
+                        <div class="items-card-cat">
+                            Геймерские кресла
+                        </div>
+                        <div class="items-card-price">
+                            <p>19 300₽ <strike>35 000₽ </strike></p>
+                        </div>
+                        <div class="items-card-hidden">
+                            <div class="items-card-size">
+                                <p>Размеры</p>
+                                <div class="items-card-size-container">
+                                    <div class="items-card-size-column">
+                                        <span>Ширина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Глубина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Высота</span>
+                                        <p>77 см</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-card-addToCart">
+                                <a href="#" class="btn">Добавить в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-card last">
+                    <div class="items-card-info">
+                        <span>Осталось 1 шт.</span>
+                    </div>
+                    <div class="items-card-container">
+                        <div class="items-card-img">
+                            <img src="img/product.png" alt="">
+                        </div>
+                        <h3>Lotus S10 экокожа красный</h3>
+                        <div class="items-card-cat">
+                            Геймерские кресла
+                        </div>
+                        <div class="items-card-price">
+                            <p>19 300₽ <strike>35 000₽ </strike></p>
+                        </div>
+                        <div class="items-card-hidden">
+                            <div class="items-card-size">
+                                <p>Размеры</p>
+                                <div class="items-card-size-container">
+                                    <div class="items-card-size-column">
+                                        <span>Ширина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Глубина</span>
+                                        <p>43 см</p>
+                                    </div>
+                                    <div class="items-card-size-column">
+                                        <span>Высота</span>
+                                        <p>77 см</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items-card-addToCart">
+                                <a href="#" class="btn">Добавить в корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more">
+                <a href="#" class="btn">Показать еще</a>
+            </div>
+            <div class="catalog-page-nav">
+                <div class="catalog-items-count">
+                    <span>Показывать по: </span>
+                    <select name="" id="items-count">
+                        <option value="">24</option>
+                        <option value="">36</option>
+                        <option value="">48</option>
+                    </select>
+                </div>
+                <ul class="page-nav">
+                    <li class="prev"></li>
+                    <li class="current-page">1</li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">12</a></li>
+                    <li class="next"></li>
+                </ul>
+            </div>
+        </div>
+        <aside class="catalog-sidebar">
+            <div class="catalog-sidebar-block catalog-sidebar-slider">
+                <div class="catalog-sidebar-header">
+                    Цена, ₽
+                </div>
+                <div class="catalog-sidebar-body">
+                    <p>
+                        <span>
+                            <input type="number" name="min_price" value="2000">
+                        </span>
+                        <span>
+                            <input type="number" name="max_price" value="1000000">
+                        </span>
+                    </p>
+                    <div class="catalog-slider" data-max="1000000" data-min="2000" id="price-slider"></div>
+                </div>
+            </div>
+            <div class="catalog-sidebar-block catalog-sidebar-slider">
+                <div class="catalog-sidebar-header">
+                    Мак. нагрузка (кг)
+                </div>
+                <div class="catalog-sidebar-body">
+                    <p>
+                        <span>
+                            <input type="number" name="min_weight" value="10">
+                        </span>
+                        <span>
+                            <input type="number" name="max_weight" value="200">
+                        </span>
+                    </p>
+                    <div class="catalog-slider" data-max="200" data-min="10" id="weight-slider"></div>
+                </div>
+            </div>
+            <div class="catalog-sidebar-block catalog-sidebar-checkbox">
+                <div class="catalog-sidebar-header">
+                    <span>Производители</span>
+                </div>
+                <div class="catalog-sidebar-body">
+                    <div class="catalog-sidebar-row">
+                        <label for="first">Gym80</label>
+                        <input type="checkbox" id="first">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="second">Gym80</label>
+                        <input type="checkbox" id="second">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="third">Gym80</label>
+                        <input type="checkbox" id="third">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="five">Gym80</label>
+                        <input type="checkbox" id="five">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="six">Gym80</label>
+                        <input type="checkbox" id="six">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="seven">Gym80</label>
+                        <input type="checkbox" id="seven">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="eight">Gym80</label>
+                        <input type="checkbox" id="eight">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="nine">Gym80</label>
+                        <input type="checkbox" id="nine">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="ten">Gym80</label>
+                        <input type="checkbox" id="ten">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="eleven">Gym80</label>
+                        <input type="checkbox" id="eleven">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="twelve">Gym80</label>
+                        <input type="checkbox" id="twelve">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="thirteen">Gym80</label>
+                        <input type="checkbox" id="thirteen">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="fourteen">Gym80</label>
+                        <input type="checkbox" id="fourteen">
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-sidebar-block catalog-sidebar-checkbox">
+                <div class="catalog-sidebar-header">
+                    <span>Подлокотник</span>
+                </div>
+                <div class="catalog-sidebar-body">
+                    <div class="catalog-sidebar-row">
+                        <label for="have">Есть</label>
+                        <input type="checkbox" id="have">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="not">Нет</label>
+                        <input type="checkbox" id="not">
+                    </div>
+                    <div class="catalog-sidebar-row">
+                        <label for="optial">Опционально</label>
+                        <input type="checkbox" id="optial">
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-sidebar-block catalog-sidebar-checkbox">
+                <div class="catalog-sidebar-header">
+                    <span>Наличие газлифта</span>
+                </div>
+                <div class="catalog-sidebar-body">
+                    <div class="catalog-sidebar-row">
+                        <label for="have1">Есть</label>
+                        <input type="checkbox" id="have1">
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-sidebar-block catalog-sidebar-checkbox">
+                <div class="catalog-sidebar-header">
+                    <span>Акция, наличие</span>
+                </div>
+                <div class="catalog-sidebar-body">
+                    <div class="catalog-sidebar-row">
+                        <label for="have1">Есть</label>
+                        <input type="checkbox" id="have1">
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-sidebar-block catalog-sidebar-btn">
+                <div class="catalog-sidebar-body">
+                    <a href="#" class="btn">Очистить</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div class="text-block">
+        <div class="container">
+            <div class="heading">
+                <h2>Я seo блок и я очень важен </h2>
+            </div>
+            <p>«Кресло в дом» — молодой, динамично развивающийся бренд офисных кресел и диванов. Собственное производство в Республике Беларусь и Китае дают нам несомненные преимущества по качеству и цене на нашу продукцию. Только оптовые продажи кресел, розницу — оставляем Вам. Вы можете посетить наш шоу-рум и выбрать на месте понравившуюся модель. Просьба уточняйте наличие товара заранее. Адрес: Москва, ул. Кировоградская 15, этаж 4 павильон Б-11. Оплата наличными или картами. «Кресло в дом» — молодой, динамично развивающийся бренд офисных кресел и диванов. Собственное производство в  еспублике Беларусь и Китае дают нам несомненные преимущества по качеству и цене на нашу продукцию. Только оптовые продажи кресел, розницу — оставляем Вам...</p>
+            <a href="#">Читать далее</a>
+        </div>
+    </div>
+</div>
 
 <footer class="main-footer">
     <div class="container">
@@ -141,6 +637,9 @@
 
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/slick/slick.min.js"></script>
+<script src="lib/ui-slider/jquery-ui.min.js"></script>
+<script src="lib/ui-slider/jquery.ui.touch-punch.min.js"></script>
+<script src="lib/form-styler/jquery.formstyler.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
