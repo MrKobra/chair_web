@@ -368,3 +368,229 @@
             &::-webkit-input-placeholder
               color: #CCCCCC
               opacity: 1
+
+// Text Block
+.text-block
+  padding-top: 150px
+  p
+    margin: 20px 0 0
+    font-size: 20px
+    line-height: 30px
+    color: $black
+  a
+    font-size: 18px
+    color: $red
+    border-bottom: 1px solid $red
+    display: inline-block
+    margin-top: 10px
+
+// Our location
+.our-location
+  padding: 150px 0
+  .heading
+    flex-direction: column
+    align-items: flex-start
+    width: 520px
+  &-container
+    margin-top: 50px
+    display: flex
+    column-gap: 30px
+  &-column
+    flex-basis: 50%
+  &-img
+    height: 400px
+    img
+      display: none
+  &-contact
+    width: 425px
+    margin: -30px auto 0
+    background: #ffffff
+    box-sizing: border-box
+    padding: 5px 50px 35px
+    border: 1px solid #EEEEEE
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.05)
+    min-height: 375px
+  &-block
+    margin-top: 25px
+    padding-left: 35px
+    position: relative
+    &:before
+      content: ''
+      width: 24px
+      height: 24px
+      position: absolute
+      left: 0
+      top: 0
+    &.map
+      &:before
+        background: url(../img/location.png) no-repeat center center
+    &.phone
+      &:before
+        background: url(../img/phone.png) no-repeat center center
+    &.work-time
+      &:before
+        background: url(../img/calendar.png) no-repeat center center
+    &.more
+      a
+        width: 200px
+        padding: 15px 0
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+        border-radius: 5px
+        text-transform: uppercase
+        font-size: 12px
+        font-weight: 700
+    p
+      font-size: 16px
+      line-height: 21px
+      margin: 0
+      color: #646568
+      strong
+        font-weight: 500
+        color: $black
+    ul
+      padding: 0
+      margin: 0
+      li
+        font-size: 16px
+        line-height: 21px
+        list-style: none
+        a
+          color: #646568
+        
+// Main footer
+.main-footer
+  background: $black
+  padding: 40px 0 30px
+  &-top
+    display: flex
+    justify-content: space-between
+    padding-bottom: 60px
+    .logo
+      margin-top: 47px
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+  &-heading
+    h3
+      font-weight: 500
+      font-size: 18px
+      line-height: 27px
+      margin: 0
+      color: #ffffff
+  &-menu
+    ul
+      li
+        font-size: 14px
+        line-height: 21px
+        margin-top: 15px
+        a
+          color: #CCCCCC
+  &-contact
+    flex-basis: 255px
+    ul
+      margin-top: 6px
+      li
+        font-size: 14px
+        line-height: 21px
+        margin-top: 9px
+        color: $grey
+        &:first-child
+          a
+            color: #CCCCCC
+        a
+          color: $grey
+  &-bottom
+    display: flex
+    justify-content: space-between
+    border-top: 1px solid #443E3E
+    padding-top: 20px
+    align-items: center
+    .copy
+      p
+        color: $grey
+        font-size: 12px
+        line-height: 18px
+        margin: 0
+    ul
+      display: flex
+      padding: 0
+      margin: 0
+      align-items: center
+      li
+        list-style: none
+    .payment
+      li
+        &:not(:last-child)
+          margin-right: 38px
+    .social
+      li
+        &:not(:last-child)
+          margin-right: 27px
+
+// Home main
+.home
+  &-main
+    margin: 30px 0 68px
+  &-slider
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1)
+    .slick-next, .slick-prev
+      bottom: -68px
+      width: 48px
+      height: 48px
+      background: $blue
+      top: auto
+      transform: none
+      transition: all .2s linear
+      &:after
+        content: ''
+        width: 24px
+        height: 24px
+        background: url(../img/home-slider-arrow.png) no-repeat center center
+        position: absolute
+        top: 50%
+        left: 50%
+        margin: -12px 0 0 -12px
+      &:before
+        display: none
+      &.slick-disabled
+        background: #C3E8E7
+    .slick-next
+      right: 0
+    .slick-prev
+      right: 68px
+      left: auto
+      &:after
+        transform: rotate(-180deg)
+  &-slide
+    &-text
+      padding: 100px 0 15px 90px
+      box-sizing: border-box
+      flex-basis: 585px
+      h2
+        font-family: $hFont, $mFont, sans-serif
+        font-size: 50px
+        line-height: 54px
+        margin: 0
+        text-transform: uppercase
+      p
+        font-size: 20px
+        line-height: 28px
+        color: $black
+        margin: 15px 0 0
+      a
+        margin-top: 23px
+        text-transform: uppercase
+        width: 200px
+        padding: 15px 15px
+        box-sizing: border-box
+        font-weight: 700
+        font-size: 12px
+    &-img
+      flex-basis: calc(100% - 585px)
+      img
+        max-width: 100%
+        height: auto
+    &-container
+      display: flex

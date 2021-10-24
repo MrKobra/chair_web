@@ -12,4 +12,8 @@ $(document).ready(function(){
             $(this).find('.items-card-hidden').slideUp(250);
         }
     })
+    // Слайдер на главной
+    $('.home-slider').slick({
+        infinite: false
+    });
 })
