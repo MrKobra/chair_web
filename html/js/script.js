@@ -19,6 +19,9 @@ $(document).ready(function(){
     // Стилизация
     $('#catalog-sort').styler();
     $('#items-count').styler();
+    $('#color-var').styler();
+    $('#count-var').styler();
+    $('#size-var').styler();
     $('.catalog-sidebar-slider input').styler();
     // Ввод только цифр
     $('.catalog-sidebar-slider input').keydown(function (event){
@@ -117,5 +120,31 @@ $(document).ready(function(){
     $('.catalog-sidebar-checkbox .catalog-sidebar-header').on('click', function(){
         $(this).parent().toggleClass('active');
         $(this).parent().find('.catalog-sidebar-body').slideToggle(500);
+    })
+    // Слайдер в карточке товаров
+    $('.single-item-slider-big').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.single-item-slider-small',
+    });
+    $('.single-item-slider-small').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '.single-item-slider-big',
+        focusOnSelect: true,
+    });
+    // Выбор цвета
+    function selectColor(){
+        var color = $('#color-var option:selected').data('color');
+        $('#color-var').parent().find('.jq-selectbox__select').css('background', color);
+    }
+    selectColor();
+    $('#color-var').on('change', function(){
+        selectColor();
+    })
+    $('#color-var').parent().find('.jq-selectbox__dropdown li').each(function(){
+        $(this).css('background', $(this).data('color'));
     })
 })

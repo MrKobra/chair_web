@@ -922,5 +922,281 @@
         color: $red
         border-radius: 4px
   .text-block
+    padding-top: 0
     .container
       display: block
+
+// Single item
+.single-item
+  padding-top: 20px
+  &-container
+    display: flex
+  &-img
+    width: 655px
+  &-slide
+    img
+      display: none
+      max-width: 100%
+      margin: 0 auto
+      height: auto
+    &-container
+      background-size: cover!important
+  &-slider
+    &-big
+      .single-item
+        &-slide
+          &-container
+            height: 395px
+            position: relative
+          &-info
+            position: absolute
+            left: 15px
+            top: 15px
+            font-weight: 700
+            border-radius: 5px
+            color: #ffffff
+            text-align: center
+            width: 100px
+            padding: 8px 0
+            z-index: 2
+          &.new
+            .single-item-slide-info
+              background: $blue
+              font-size: 14px
+          &.sale
+            .single-item-slide-info
+              background: $red
+              font-size: 14px
+          &.last
+            .single-item-slide-info
+              background: $yellow
+              font-size: 11px
+    &-small
+      margin: 0 -5px
+      padding: 0 29px
+      .slick-prev, .slick-next
+        width: 9px
+        height: 16px
+        &:before
+          display: none
+        &:after
+          content: ''
+          width: 9px
+          height: 16px
+          background: url(../img/page-nav-arrow.png) no-repeat center center
+          position: absolute
+          top: 0
+          left: 0
+      .slick-prev
+        left: 5px
+        &:after
+          transform: rotate(180deg)
+      .slick-next
+        right: 5px
+      .single-item-slide
+        padding: 0 5px
+        &.slick-current
+          .single-item-slide-container
+            border: 1px solid rgba(179, 56, 59, 0.1)
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+        &-container
+          height: 90px
+  &-info
+    padding-left: 50px
+    flex-basis: calc(100% - 655px)
+    box-sizing: border-box
+    span
+      font-size: 14px
+      line-height: 17px
+      color: #646568
+    h1
+      color: $black
+      font-size: 28px
+      line-height: 33px
+      font-weight: 500
+      margin: 30px 0 0
+    .category
+      margin-top: 5px
+  &-price
+    margin-top: 30px
+    display: flex
+    align-items: center
+    .price
+      font-size: 28px
+      line-height: 33px
+      color: $black
+      font-weight: 500
+      padding-right: 15px
+    .addToCart
+      a
+        width: 220px
+        font-size: 13px
+        border-radius: 5px
+  .description
+    margin-top: 30px
+    p
+      margin: 5px 0 0
+      font-size: 14px
+      line-height: 23px
+      color: #646568
+  &-var
+    display: flex
+    margin-top: 30px
+    .color, .count, .size
+      padding-right: 19px
+    .color
+      .jq-selectbox
+        &__select
+          width: 30px
+          height: 30px
+          padding: 0
+          &-text
+            display: none
+        &__dropdown
+          width: 30px!important
+          ul
+            padding: 0
+            li
+              padding: 0
+              display: block!important
+              width: 30px
+              height: 30px
+    .count
+      margin-left: 25px
+      .jq-selectbox
+        &__select
+          width: 30px
+          height: 30px
+          padding: 0
+          display: flex
+          align-items: center
+          justify-content: center
+          text-align: center
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07)
+          &-text
+            font-size: 14px
+            line-height: 16px
+            font-weight: 500
+        &__dropdown
+          width: 30px!important
+          ul
+            padding: 0
+            li
+              padding: 0
+              width: 30px
+              height: 30px
+              display: flex
+              align-items: center
+              justify-content: center
+              font-size: 14px
+    .size
+      margin-left: 45px
+      .jq-selectbox
+        &__select
+          display: flex
+          align-items: center
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+          padding: 0 10px
+          &-text
+            font-size: 14px
+            line-height: 16px
+            font-weight: 500
+        &__dropdown
+          width: calc(100% + 20px)
+          ul
+            li
+              font-size: 14px
+    .jq-selectbox
+      &.focused
+        .jq-selectbox__select
+          border: none
+      &__select
+        box-shadow: none
+        background: transparent
+        border-radius: 0
+        border: none
+        font-size: 12px
+        line-height: 14px
+        color: $black
+        font-family: $mFont, $hFont, sans-serif
+        text-shadow: none
+        box-sizing: border-box
+      &__trigger
+        width: 8px
+        height: 5px
+        top: 50%
+        margin-top: -2px
+        right: -19px
+        border: none
+        background: url(../img/var-arrow.png) no-repeat center center
+        &-arrow
+          display: none
+      &__dropdown
+        margin: 6px 0 0
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+        ul
+          padding: 10px 0
+          li
+            padding: 10px 20px
+            font-size: 12px
+            line-height: 14px
+            color: $black
+            font-family: $mFont, $hFont, sans-serif
+            &:hover
+              background: transparent
+            &.selected
+              background: transparent
+            &.disabled
+              color: $grey
+  &-property
+    padding-top: 50px
+    h3
+      font-size: 20px
+      line-height: 30px
+      color: $black
+      position: relative
+      padding-bottom: 20px
+      &:after
+        content: ''
+        width: 390px
+        height: 2px
+        background: #F0F0F0
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 1
+      &:before
+        content: ''
+        width: 200px
+        height: 2px
+        background: $yellow
+        position: absolute
+        left: 0
+        z-index: 2
+        bottom: 0
+    ul
+      padding: 30px 0 0
+      margin: 0
+      width: 565px
+      li
+        list-style: none
+        color: $black
+        font-size: 14px
+        display: flex
+        padding: 10px 25px
+        span
+          flex-basis: 390px
+          position: relative
+          &:after
+            content: ''
+            width: 100%
+            border: 1px dashed #CCCCCC
+            position: absolute
+            left: 0
+            bottom: 2px
+        &:nth-child(2n)
+          background: #EEEEEE
+  .items
+    padding-top: 150px
+  .text-block
+    padding: 0 0 150px
