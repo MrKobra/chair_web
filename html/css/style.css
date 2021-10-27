@@ -1649,4 +1649,129 @@ body {
   cursor: pointer;
 }
 
+/* Contact page */
+.contact-page {
+  padding-top: 50px;
+}
+.contact-page-block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 130px;
+}
+.contact-page-info {
+  flex-basis: calc(100% - 700px);
+  padding-right: 70px;
+  box-sizing: border-box;
+}
+.contact-page-info h2 {
+  font-size: 30px;
+  line-height: 39px;
+  margin: 0;
+}
+.contact-page-info p {
+  color: #646568;
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0;
+}
+.contact-page-info ul {
+  padding: 0;
+  margin: 0;
+}
+.contact-page-info ul li {
+  font-size: 20px;
+  line-height: 26px;
+  list-style: none;
+}
+.contact-page-info ul li a {
+  color: #646568;
+}
+.contact-page-map {
+  width: 700px;
+  position: relative;
+  overflow: hidden;
+}
+.contact-page-map-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.contact-page-heading {
+  font-weight: 500;
+  font-size: 20px;
+  color: #262E38;
+  margin-bottom: 10px;
+}
+.contact-page .address, .contact-page .work-time, .contact-page .telephone {
+  padding-left: 26px;
+  margin-top: 25px;
+  position: relative;
+}
+.contact-page .address:before, .contact-page .work-time:before, .contact-page .telephone:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+}
+.contact-page .address:before {
+  background: url(../img/location.png) no-repeat center center;
+  top: -2px;
+}
+.contact-page .work-time:before {
+  background: url(../img/calendar.png) no-repeat center center;
+  top: -4px;
+}
+.contact-page .telephone:before {
+  top: 1px;
+  background: url(../img/phone.png) no-repeat center center;
+}
+.contact-page-container {
+  display: flex;
+  column-gap: 100px;
+}
+.contact-page-container h2 {
+  font-size: 30px;
+  margin: 0;
+}
+.contact-page-container p {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 10px 0 0;
+}
+.contact-page-container p a {
+  color: #38B3B0;
+  border-bottom: 1px solid #38B3B0;
+}
+.contact-page-container ul {
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+}
+.contact-page-container ul li {
+  list-style: none;
+}
+.contact-page-column {
+  flex-basis: 50%;
+}
+.contact-page-column:nth-child(2) {
+  flex-basis: 700px;
+}
+.contact-page-column:first-child {
+  flex-basis: calc(100% - 700px);
+}
+.contact-page-payment ul {
+  margin-left: -12px;
+}
+.contact-page-payment ul li:not(:last-child) {
+  margin-right: 15px;
+}
+.contact-page-social {
+  margin-top: 55px;
+}
+.contact-page-social ul li:not(:last-child) {
+  margin-right: 25px;
+}
+
 /*# sourceMappingURL=style.css.map */

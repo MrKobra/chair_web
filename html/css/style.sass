@@ -1348,3 +1348,106 @@
         border-radius: 5px
         &:hover
           cursor: pointer
+
+/* Contact page */
+.contact-page
+  padding-top: 50px
+  &-block
+    display: flex
+    justify-content: space-between
+    margin-bottom: 130px
+  &-info
+    flex-basis: calc(100% - 700px)
+    padding-right: 70px
+    box-sizing: border-box
+    h2
+      font-size: 30px
+      line-height: 39px
+      margin: 0
+    p
+      color: #646568
+      font-size: 20px
+      line-height: 26px
+      margin: 0
+    ul
+      padding: 0
+      margin: 0
+      li
+        font-size: 20px
+        line-height: 26px
+        list-style: none
+        a
+          color: #646568
+  &-map
+    width: 700px
+    position: relative
+    overflow: hidden
+    &-container
+      position: absolute
+      width: 100%
+      top: 50%
+      transform: translateY(-50%)
+  &-heading
+    font-weight: 500
+    font-size: 20px
+    color: $black
+    margin-bottom: 10px
+  .address, .work-time, .telephone
+    padding-left: 26px
+    margin-top: 25px
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      width: 24px
+      height: 24px
+  .address
+    &:before
+      background: url(../img/location.png) no-repeat center center
+      top: -2px
+  .work-time
+    &:before
+      background: url(../img/calendar.png) no-repeat center center
+      top: -4px
+  .telephone
+    &:before
+      top: 1px
+      background: url(../img/phone.png) no-repeat center center
+  &-container
+    display: flex
+    column-gap: 100px
+    h2
+      font-size: 30px
+      margin: 0
+    p
+      font-size: 14px
+      line-height: 21px
+      margin: 10px 0 0
+      a
+        color: $blue
+        border-bottom: 1px solid $blue
+    ul
+      padding: 0
+      margin: 20px 0 0
+      display: flex 
+      li
+        list-style: none
+  &-column
+    flex-basis: 50%
+    &:nth-child(2)
+      flex-basis: 700px
+    &:first-child
+      flex-basis: calc(100% - 700px)
+  &-payment
+    ul
+      margin-left: -12px
+      li
+        &:not(:last-child)
+          margin-right: 15px
+  &-social
+    margin-top: 55px
+    ul
+      li
+        &:not(:last-child)
+          margin-right: 25px
