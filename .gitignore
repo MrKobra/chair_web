@@ -123,6 +123,7 @@ fabric.properties
 /wordpress/wp-content/index.php
 /wordpress/wp-content/languages
 /wordpress/wp-content/plugins/index.php
+/wordpress/wp-content/plugins/woocommerce
 /wordpress/wp-content/themes/index.php
 /wordpress/wp-includes/
 /wordpress/index.php

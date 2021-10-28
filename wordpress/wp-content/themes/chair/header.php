@@ -22,38 +22,76 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'chair' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$chair_description = get_bloginfo( 'description', 'display' );
-			if ( $chair_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $chair_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+<header class="top-header">
+    <div class="container">
+        <div class="top-header-menu">
+            <?php
+            wp_nav_menu( [
+                'theme_location'  => 'header_menu',
+                'container'       => '',
+                'items_wrap'      => '<ul>%3$s</ul>',
+                'depth'           => 0,
+                'walker'          => '',
+            ] );
+            ?>
+        </div>
+        <?php if(get_field('telephone', 'options')): ?>
+        <div class="top-header-phone">
+            <?php the_field('telephone', 'options'); ?>
+        </div>
+        <?php endif; ?>
+    </div>
+</header>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'chair' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+<header class="bottom-header">
+    <div class="container">
+        <?php $header_logo = get_field('header_logo', 'options');
+        if($header_logo): ?>
+        <div class="logo">
+            <a href="<?php echo home_url(); ?>">
+                <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $header_logo['alt']; ?>">
+            </a>
+        </div>
+        <?php endif; ?>
+        <div class="bottom-header-search">
+            <form action="#">
+                <input type="text" placeholder="Вы ищите, мы находим">
+                <button><img src="<?php echo get_template_directory_uri(); ?>/assets/img/search.png" alt="Поиск"></button>
+            </form>
+        </div>
+        <?php chair_woocommerce_cart_link() ?>
+    </div>
+</header>
+
+<?php
+$args = [
+    'taxonomy'      => 'product_cat',
+    'orderby'       => 'id',
+    'order'         => 'DESC',
+    'hide_empty'    => false,
+    'exclude'       => array(15),
+    'update_term_meta_cache' => true,
+];
+
+$terms = get_terms( $args );
+
+if($terms):
+?>
+<nav class="cat-nav">
+    <div class="container">
+        <div class="cat-nav-container">
+            <ul>
+                <?php
+                foreach( $terms as $term ):
+                    $img = get_term_meta($term->term_id, 'thumbnail_id');
+                    $img_url = wp_get_attachment_url($img[0]); ?>
+                    <li><a href="<?php echo get_term_link($term->term_id) ?>"><img src="<?php echo $img_url ?>" alt=""><span><?php echo $term->name ?></span></a></li>
+                <?php endforeach; 
+                ?>
+                <li class="stocks"><a href="#"><span>Акции</span> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat-icon-7.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<?php endif ?>

@@ -1,0 +1,1512 @@
+@import "reset.sass"
+@import "../fonts/fonts.css"
+@import "sittings.sass"
+
+/* Top Header */
+
+.top-header
+  background: $black
+  padding: 12px 0
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-menu
+    ul
+      padding: 0
+      margin: 0
+      display: flex
+      li
+        list-style: none
+        font-size: 14px
+        line-height: 17px
+        a
+          color: #ffffff
+        &:not(:last-child)
+          margin-right: 20px
+  &-phone
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+        position: relative
+        font-size: 14px
+        line-height: 17px
+        padding-left: 24px
+        a
+          color: #ffffff
+        &:before
+          content: ''
+          width: 14px
+          height: 20px
+          background: url(../img/smartphone.png) no-repeat center center
+          left: 0
+          top: 50%
+          margin-top: -7px
+          position: absolute
+
+/* Bottom Header */
+.bottom-header
+  padding: 30px 0
+  .container
+    display: flex
+    align-items: center
+  .logo
+    flex-basis: 312px
+    img
+      height: auto
+  &-search
+    flex-basis: 550px
+    form
+      display: flex
+    input
+      width: calc(100% - 70px)
+      height: 40px
+      background: #F0F0F0
+      font-size: 14px
+      color: $black
+      border: none
+      padding: 0 15px
+      box-sizing: border-box
+      &::-moz-placeholder
+        color: rgba(61, 61, 61, 0.5)
+        opacity: 1
+      &::-webkit-input-placeholder
+        color: rgba(61, 61, 61, 0.5)
+        opacity: 1
+    button
+      width: 70px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+      background: $blue
+      border: none
+      padding: 0
+      box-sizing: border-box
+      &:hover
+        cursor: pointer
+  &-cart
+    flex-basis: 358px
+    text-align: right
+    &-container
+      display: inline-block
+      text-align: left
+      padding-left: 47px
+      position: relative
+      &:before
+        content: ''
+        width: 42px
+        height: 42px
+        background: url(../img/shopping-cart.png) no-repeat center center
+        position: absolute
+        left: 0
+        top: 50%
+        margin-top: -21px
+    p
+      font-size: 14px
+      line-height: 16px
+      color: $black
+      margin: 0
+    strong
+      font-size: 14px
+      line-height: 16px
+      font-weight: 500
+    span
+      font-size: 10px
+      color: #ffffff
+      background: $red
+      display: flex
+      width: 16px
+      height: 16px
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      position: absolute
+      border: 2px solid #ffffff
+      left: -4px
+      top: -11px
+
+/* Cat Nav */
+.cat-nav
+  &-container
+    border: 1px solid #EEEEEE
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+    padding: 18px 30px
+  ul
+    padding: 0
+    margin: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    li
+      list-style: none
+      a
+        color: $black
+        font-size: 16px
+        line-height: 19px
+        display: flex
+        align-items: center
+      &:not(:last-child)
+        margin-right: 28px
+        a
+          span
+            margin-left: 7px
+      &:last-child
+        a
+          color: $red
+          span
+            margin-right: 15px
+
+/* Items */
+.items
+  &.popular-items
+    padding: 150px 0 0
+  &-card
+    flex-basis: calc(25% - 24px)
+    border: 1px solid #EEEEEE
+    padding: 50px 30px 15px
+    box-sizing: border-box
+    position: relative
+    &-info
+      position: absolute
+      right: 10px
+      top: 10px
+      font-weight: 700
+      border-radius: 5px
+      color: #ffffff
+      text-align: center
+      width: 100px
+      padding: 8px 0
+    &.new
+      .items-card-info
+        background: $blue
+        font-size: 14px
+    &.sale
+      .items-card-info
+        background: $red
+        font-size: 14px
+    &.last
+      .items-card-info
+        background: $yellow
+        font-size: 11px
+    &.sale, &.last
+      .items-card-price
+        p
+          color: $red
+          strike
+            color: $grey
+            font-size: 14px
+            margin-left: 15px
+    &-img
+      text-align: center
+      img
+        max-width: 100%
+        height: auto
+    h3
+      font-weight: 500
+      font-size: 16px
+      line-height: 19px
+      margin: 30px 0 0
+      color: $black
+    &-cat
+      margin-top: 6px
+      color: $grey
+      font-size: 11px
+      line-height: 13px
+    &-price
+      p
+        font-size: 16px
+        color: $black
+        line-height: 19px
+        margin: 9px 0 0
+    &-size
+      p
+        color: $black
+        font-size: 12px
+        line-height: 14px
+        margin: 0
+      &-container
+        display: flex
+        column-gap: 37px
+        margin-top: 8px
+      &-column
+        &:not(:last-child)
+          position: relative
+          &:after
+            content: '×'
+            color: $black
+            font-size: 12px
+            position: absolute
+            right: -19px
+            top: 50%
+        span
+          color: $grey
+          text-transform: uppercase
+          font-size: 9px
+          line-height: 11px
+        p
+          font-size: 9px
+          line-height: 11px
+          color: $black
+          margin: 8px 0 0
+    &-addToCart
+      margin-top: 17px
+      a
+        width: 100%
+    &-hidden
+      z-index: 2
+      display: none
+      position: absolute
+      background: #ffffff
+      top: 100%
+      left: 0
+      width: 100%
+      border: 1px solid #EEEEEE
+      border-top: none
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1)
+      box-sizing: border-box
+      padding: 0 30px 15px
+    &.active
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1)
+  &-container
+    display: flex
+    flex-wrap: wrap
+    column-gap: 30px
+    margin-top: 50px
+    row-gap: 50px
+
+/* Advantages */
+.advantages
+  padding: 150px 0
+  &-container
+    display: flex
+    margin-top: 50px
+    column-gap: 60px
+  &-card
+    flex-basis: 33.33%
+    box-shadow: 0 12px 64px rgba(0, 0, 0, 0.08)
+    border-radius: 4px
+    border: 1px solid #EEEEEE
+    padding: 40px 30px
+    box-sizing: border-box
+    &-header
+      display: flex
+      align-items: center
+      h3
+        font-weight: 500
+        font-size: 18px
+        line-height: 23px
+        margin: 0
+        flex-basis: calc(100% - 80px)
+    p
+      font-size: 13px
+      line-height: 20px
+      color: $grey
+      margin: 15px 0 0
+    &-img
+      flex-basis: 80px
+
+.contact-form
+  background: #C3E8E7 url(../img/contact-bg.png) no-repeat center center
+  padding: 75px 0 50px
+  &-heading
+    width: 670px
+    h2
+      font-family: $hFont, $mFont, sans-serif
+      font-size: 40px
+      line-height: 56px
+      letter-spacing: 1px
+      color: $black
+      text-transform: uppercase
+      margin: 0
+    p
+      font-size: 20px
+      line-height: 28px
+      color: #443E3E
+      margin: 15px 0 0
+  .warning
+    font-size: 14px
+    line-height: 20px
+    color: $grey
+    text-align: center
+    margin-top: 10px
+  form
+    width: 515px
+    margin-top: 40px
+    input[type=submit]
+      width: 100%
+      border: none
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+      padding: 15px 0
+      border-radius: 5px
+      text-transform: uppercase
+      font-size: 12px
+      font-weight: 700
+      margin-top: 35px
+      &:hover
+        cursor: pointer
+    p
+      display: flex
+      column-gap: 40px
+      margin: 0
+      span
+        flex-basis: 50%
+        input
+          &:not([type=submit])
+            width: 100%
+            height: 40px
+            font-size: 16px
+            color: $black
+            border: 1px solid #EEEEEE
+            padding: 0 12px
+            box-sizing: border-box
+            &::-moz-placeholder
+              color: #CCCCCC
+              opacity: 1
+            &::-webkit-input-placeholder
+              color: #CCCCCC
+              opacity: 1
+
+// Text Block
+.text-block
+  padding-top: 150px
+  p
+    margin: 20px 0 0
+    font-size: 20px
+    line-height: 30px
+    color: $black
+  a
+    font-size: 18px
+    color: $red
+    border-bottom: 1px solid $red
+    display: inline-block
+    margin-top: 10px
+
+// Our location
+.our-location
+  padding: 150px 0
+  .heading
+    flex-direction: column
+    align-items: flex-start
+    width: 520px
+  &-container
+    margin-top: 50px
+    display: flex
+    column-gap: 30px
+  &-column
+    flex-basis: 50%
+  &-img
+    height: 400px
+    img
+      display: none
+  &-contact
+    width: 425px
+    margin: -30px auto 0
+    background: #ffffff
+    box-sizing: border-box
+    padding: 5px 50px 35px
+    border: 1px solid #EEEEEE
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.05)
+    min-height: 375px
+  &-block
+    margin-top: 25px
+    padding-left: 35px
+    position: relative
+    &:before
+      content: ''
+      width: 24px
+      height: 24px
+      position: absolute
+      left: 0
+      top: 0
+    &.map
+      &:before
+        background: url(../img/location.png) no-repeat center center
+    &.phone
+      &:before
+        background: url(../img/phone.png) no-repeat center center
+    &.work-time
+      &:before
+        background: url(../img/calendar.png) no-repeat center center
+    &.more
+      a
+        width: 200px
+        padding: 15px 0
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+        border-radius: 5px
+        text-transform: uppercase
+        font-size: 12px
+        font-weight: 700
+    p
+      font-size: 16px
+      line-height: 21px
+      margin: 0
+      color: #646568
+      strong
+        font-weight: 500
+        color: $black
+    ul
+      padding: 0
+      margin: 0
+      li
+        font-size: 16px
+        line-height: 21px
+        list-style: none
+        a
+          color: #646568
+        
+// Main footer
+.main-footer
+  background: $black
+  padding: 40px 0 30px
+  &-top
+    display: flex
+    justify-content: space-between
+    padding-bottom: 60px
+    .logo
+      margin-top: 47px
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+  &-heading
+    h3
+      font-weight: 500
+      font-size: 18px
+      line-height: 27px
+      margin: 0
+      color: #ffffff
+  &-menu
+    ul
+      li
+        font-size: 14px
+        line-height: 21px
+        margin-top: 15px
+        a
+          color: #CCCCCC
+  &-contact
+    flex-basis: 255px
+    ul
+      margin-top: 6px
+      li
+        font-size: 14px
+        line-height: 21px
+        margin-top: 9px
+        color: $grey
+        &:first-child
+          a
+            color: #CCCCCC
+        a
+          color: $grey
+  &-bottom
+    display: flex
+    justify-content: space-between
+    border-top: 1px solid #443E3E
+    padding-top: 20px
+    align-items: center
+    .copy
+      p
+        color: $grey
+        font-size: 12px
+        line-height: 18px
+        margin: 0
+    ul
+      display: flex
+      padding: 0
+      margin: 0
+      align-items: center
+      li
+        list-style: none
+    .payment
+      li
+        &:not(:last-child)
+          margin-right: 38px
+    .social
+      li
+        &:not(:last-child)
+          margin-right: 27px
+
+// Home main
+.home
+  &-main
+    margin: 30px 0 68px
+  &-slider
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1)
+    .slick-next, .slick-prev
+      bottom: -68px
+      width: 48px
+      height: 48px
+      background: $blue
+      top: auto
+      transform: none
+      transition: all .2s linear
+      &:after
+        content: ''
+        width: 24px
+        height: 24px
+        background: url(../img/home-slider-arrow.png) no-repeat center center
+        position: absolute
+        top: 50%
+        left: 50%
+        margin: -12px 0 0 -12px
+      &:before
+        display: none
+      &.slick-disabled
+        background: #C3E8E7
+    .slick-next
+      right: 0
+    .slick-prev
+      right: 68px
+      left: auto
+      &:after
+        transform: rotate(-180deg)
+  &-slide
+    &-text
+      padding: 100px 0 15px 90px
+      box-sizing: border-box
+      flex-basis: 585px
+      h2
+        font-family: $hFont, $mFont, sans-serif
+        font-size: 50px
+        line-height: 54px
+        margin: 0
+        text-transform: uppercase
+      p
+        font-size: 20px
+        line-height: 28px
+        color: $black
+        margin: 15px 0 0
+      a
+        margin-top: 23px
+        text-transform: uppercase
+        width: 200px
+        padding: 15px 15px
+        box-sizing: border-box
+        font-weight: 700
+        font-size: 12px
+    &-img
+      flex-basis: calc(100% - 585px)
+      img
+        max-width: 100%
+        height: auto
+    &-container
+      display: flex
+
+.breadcrumbs
+  padding: 30px 0
+  ul
+    padding: 0
+    margin: 0
+    display: flex
+    li
+      list-style: none
+      font-size: 14px
+      line-height: 17px
+      color: $grey
+      a
+        color: $black
+        position: relative
+        padding-right: 35px
+        display: inline-block
+        &:after
+          content: '/'
+          color: $black
+          font-size: 12px
+          line-height: 14px
+          position: absolute
+          top: 2px
+          right: 14px
+
+.catalog
+  margin-top: 20px
+  padding-bottom: 150px
+  .container
+    display: flex
+    flex-direction: row-reverse
+  &-container 
+    flex-basis: 910px
+    .items
+      &-card
+        flex-basis: calc(33% - 17px)
+  &-sort
+    text-align: right
+    .jq-selectbox
+      &.focused
+        .jq-selectbox__select
+          border: none
+      &__select
+        box-shadow: none
+        background: transparent
+        border-radius: 0
+        border: none
+        font-size: 12px
+        line-height: 14px
+        color: $black
+        font-family: $mFont, $hFont, sans-serif
+        text-shadow: none
+        height: auto
+        padding: 0 20px
+        width: 165px
+        box-sizing: border-box
+        &-text
+          padding-right: 9px
+          box-sizing: border-box
+      &__trigger
+        width: 19px
+        height: 11px
+        top: 2px
+        border: none
+        background: url(../img/catalog-sort.png) no-repeat center center
+        &-arrow
+          display: none
+      &__dropdown
+        margin: 6px 0 0
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+        ul
+          padding: 10px 0
+          li
+            padding: 10px 20px
+            font-size: 12px
+            line-height: 14px
+            color: $black
+            font-family: $mFont, $hFont, sans-serif
+            &:hover
+              background: transparent
+            &.selected
+              background: transparent
+            &.disabled
+              color: $grey
+  .show-more
+    text-align: center
+    margin-top: 50px
+    a
+      width: calc(100% - 80px)
+      border-radius: 10px
+      font-size: 16px
+      font-weight: 500
+      padding: 14px 0
+  &-page-nav
+    margin-top: 35px
+    align-items: center
+    display: flex
+    justify-content: space-between
+    padding: 0 40px
+    .page-nav
+      margin: 0
+      display: flex
+      align-items: center
+      position: relative
+      padding: 0 9px 0 43px
+      li
+        list-style: none
+        font-size: 16px
+        line-height: 24px
+        color: $grey
+        &:not(.current-page)
+          margin-right: 34px
+        &.current-page
+          border: 1px solid #EEEEEE
+          padding: 4px 11px
+          border-radius: 6px
+          margin-right: 22px
+          color: $black
+        a
+          color: $grey
+        &.next, &.prev
+          width: 9px
+          height: 16px
+          background: url(../img/page-nav-arrow.png) no-repeat center center
+          position: absolute
+          top: 9px
+          margin: 0
+        &.next
+          right: 0
+        &.prev
+          left: 0
+          transform: rotate(-180deg)
+  &-items
+    &-count
+      span
+        color: $grey
+        font-size: 16px
+        line-height: 24px
+      .jq-selectbox
+        &.focused
+          .jq-selectbox__select
+            border: none
+        &__select
+          box-shadow: none
+          background: transparent
+          border-radius: 0
+          width: 50px
+          border: none
+          font-size: 16px
+          line-height: 24px
+          font-family: $mFont, $hFont, sans-serif
+          text-shadow: none
+          height: auto
+          padding: 0 29px 0 0
+          box-sizing: border-box
+          &-text
+            box-sizing: border-box
+            color: $grey
+        &__trigger
+          width: 24px
+          height: 24px
+          top: 0
+          border: none
+          background: url(../img/items-count-arrow.png) no-repeat center center
+          &-arrow
+            display: none
+        &__dropdown
+          width: 65px
+          margin: 6px 0 0
+          left: -17px
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+          ul
+            padding: 5px 0
+            li
+              padding: 5px 15px
+              font-size: 16px
+              color: $black
+              font-family: $mFont, $hFont, sans-serif
+              &:hover
+                background: transparent
+              &.selected
+                background: transparent
+              &.disabled
+                color: $grey
+  &-sidebar
+    flex-basis: calc(100% - 910px)
+    padding-right: 120px
+    box-sizing: border-box
+    &-header
+      font-weight: 700
+      font-size: 18px
+      line-height: 22px
+      color: #384255
+    &-slider
+      &:not(:first-child)
+        margin-top: 36px
+      p
+        display: flex
+        justify-content: space-between
+        column-gap: 23px
+        span
+          flex-basis: 50%
+          position: relative
+          &:first-child
+            &:before
+              content: ''
+              width: 15px
+              height: 1px
+              background: rgba(133, 143, 164, 0.5)
+              border-radius: 1px
+              top: 50%
+              right: -19px
+              position: absolute
+        .jq-number
+          padding: 0
+          &.focused
+            .jq-number__field
+              border: 1px solid rgba(133, 143, 164, 0.2)
+          &__spin
+            display: none
+          &__field
+            width: 100%
+            border: 1px solid rgba(133, 143, 164, 0.2)
+            border-radius: 4px
+            box-shadow: none
+      .catalog-slider
+        margin-top: 26px
+        height: 2px
+        background: $grey
+        border: none
+        width: calc(100% - 15px)
+        margin-left: 9px
+        .ui-slider
+          &-range
+            background: $red
+          &-handle
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            border: 2px solid $red
+            box-sizing: border-box
+        .ui-state-active
+          background: $red
+      .catalog-sidebar-body
+        margin-top: 12px
+    &-checkbox
+      margin-top: 30px
+      border-top: 1px solid rgba(133, 143, 164, 0.2)
+      &.active
+        .catalog-sidebar-header
+          span:after
+            transform: rotate(180deg)
+      .catalog-sidebar-body
+        display: none
+      .catalog-sidebar
+        &-header
+          padding-top: 31px
+          &:hover
+            cursor: pointer
+          span
+            position: relative
+            padding-right: 29px
+            display: inline-block
+            &:after
+              content: ''
+              width: 24px
+              height: 24px
+              background: url(../img/items-count-arrow.png) no-repeat center center
+              position: absolute
+              right: 0
+              top: 50%
+              margin-top: -12px
+              transiton: all .2s linear
+      .show-full-filter
+        color: $black
+        opacity: .8
+        font-size: 16px
+        line-height: 23px
+        margin-top: 12px
+        display: inline-block
+    &-row
+      margin-top: 30px
+      &.checked
+        label 
+          &:after
+            display: block
+      input[type=checkbox]
+        display: none
+      label
+        font-size: 16px
+        color: #443e3e
+        line-height: 23px
+        position: relative
+        padding-left: 24px
+        &:before
+          content: ''
+          width: 12px
+          height: 12px
+          box-sizing: border-box
+          border: 1px solid #858FA4
+          border-radius: 2px
+          position: absolute
+          left: 0
+          top: 50%
+          margin-top: -6px
+        &:after
+          content: ''
+          width: 12px
+          height: 12px
+          border-radius: 2px
+          background: $blue url(../img/checkox-arrow.png) no-repeat center center
+          position: absolute
+          left: 0
+          top: 50%
+          margin-top: -6px
+          display: none
+    &-btn
+      margin-top: 30px
+      border-top: 1px solid rgba(133, 143, 164, 0.2)
+      padding-top: 30px
+      a
+        width: 110px
+        background: transparent
+        border: 1px solid $red
+        color: $red
+        border-radius: 4px
+  .text-block
+    padding-top: 0
+    .container
+      display: block
+
+// Single item
+.single-item
+  padding-top: 20px
+  &-container
+    display: flex
+  &-img
+    width: 655px
+  &-slide
+    img
+      display: none
+      max-width: 100%
+      margin: 0 auto
+      height: auto
+    &-container
+      background-size: cover!important
+  &-slider
+    &-big
+      .single-item
+        &-slide
+          &-container
+            height: 395px
+            position: relative
+          &-info
+            position: absolute
+            left: 15px
+            top: 15px
+            font-weight: 700
+            border-radius: 5px
+            color: #ffffff
+            text-align: center
+            width: 100px
+            padding: 8px 0
+            z-index: 2
+          &.new
+            .single-item-slide-info
+              background: $blue
+              font-size: 14px
+          &.sale
+            .single-item-slide-info
+              background: $red
+              font-size: 14px
+          &.last
+            .single-item-slide-info
+              background: $yellow
+              font-size: 11px
+    &-small
+      margin: 0 -5px
+      padding: 0 29px
+      .slick-prev, .slick-next
+        width: 9px
+        height: 16px
+        &:before
+          display: none
+        &:after
+          content: ''
+          width: 9px
+          height: 16px
+          background: url(../img/page-nav-arrow.png) no-repeat center center
+          position: absolute
+          top: 0
+          left: 0
+      .slick-prev
+        left: 5px
+        &:after
+          transform: rotate(180deg)
+      .slick-next
+        right: 5px
+      .single-item-slide
+        padding: 0 5px
+        &.slick-current
+          .single-item-slide-container
+            border: 1px solid rgba(179, 56, 59, 0.1)
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+        &-container
+          height: 90px
+  &-info
+    padding-left: 50px
+    flex-basis: calc(100% - 655px)
+    box-sizing: border-box
+    span
+      font-size: 14px
+      line-height: 17px
+      color: #646568
+    h1
+      color: $black
+      font-size: 28px
+      line-height: 33px
+      font-weight: 500
+      margin: 30px 0 0
+    .category
+      margin-top: 5px
+  &-price
+    margin-top: 30px
+    display: flex
+    align-items: center
+    .price
+      font-size: 28px
+      line-height: 33px
+      color: $black
+      font-weight: 500
+      padding-right: 15px
+    .addToCart
+      a
+        width: 220px
+        font-size: 13px
+        border-radius: 5px
+  .description
+    margin-top: 30px
+    p
+      margin: 5px 0 0
+      font-size: 14px
+      line-height: 23px
+      color: #646568
+  &-var
+    display: flex
+    margin-top: 30px
+    .color, .count, .size
+      padding-right: 19px
+    .color
+      .jq-selectbox
+        &__select
+          width: 30px
+          height: 30px
+          padding: 0
+          &-text
+            display: none
+        &__dropdown
+          width: 30px!important
+          ul
+            padding: 0
+            li
+              padding: 0
+              display: block!important
+              width: 30px
+              height: 30px
+    .count
+      margin-left: 25px
+      .jq-selectbox
+        &__select
+          width: 30px
+          height: 30px
+          padding: 0
+          display: flex
+          align-items: center
+          justify-content: center
+          text-align: center
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07)
+          &-text
+            font-size: 14px
+            line-height: 16px
+            font-weight: 500
+        &__dropdown
+          width: 30px!important
+          ul
+            padding: 0
+            li
+              padding: 0
+              width: 30px
+              height: 30px
+              display: flex
+              align-items: center
+              justify-content: center
+              font-size: 14px
+    .size
+      margin-left: 45px
+      .jq-selectbox
+        &__select
+          display: flex
+          align-items: center
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+          padding: 0 10px
+          &-text
+            font-size: 14px
+            line-height: 16px
+            font-weight: 500
+        &__dropdown
+          width: calc(100% + 20px)
+          ul
+            li
+              font-size: 14px
+    .jq-selectbox
+      &.focused
+        .jq-selectbox__select
+          border: none
+      &__select
+        box-shadow: none
+        background: transparent
+        border-radius: 0
+        border: none
+        font-size: 12px
+        line-height: 14px
+        color: $black
+        font-family: $mFont, $hFont, sans-serif
+        text-shadow: none
+        box-sizing: border-box
+      &__trigger
+        width: 8px
+        height: 5px
+        top: 50%
+        margin-top: -2px
+        right: -19px
+        border: none
+        background: url(../img/var-arrow.png) no-repeat center center
+        &-arrow
+          display: none
+      &__dropdown
+        margin: 6px 0 0
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+        ul
+          padding: 10px 0
+          li
+            padding: 10px 20px
+            font-size: 12px
+            line-height: 14px
+            color: $black
+            font-family: $mFont, $hFont, sans-serif
+            &:hover
+              background: transparent
+            &.selected
+              background: transparent
+            &.disabled
+              color: $grey
+  &-property
+    padding-top: 50px
+    h3
+      font-size: 20px
+      line-height: 30px
+      color: $black
+      position: relative
+      padding-bottom: 20px
+      &:after
+        content: ''
+        width: 390px
+        height: 2px
+        background: #F0F0F0
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 1
+      &:before
+        content: ''
+        width: 200px
+        height: 2px
+        background: $yellow
+        position: absolute
+        left: 0
+        z-index: 2
+        bottom: 0
+    ul
+      padding: 30px 0 0
+      margin: 0
+      width: 565px
+      li
+        list-style: none
+        color: $black
+        font-size: 14px
+        display: flex
+        padding: 10px 25px
+        span
+          flex-basis: 390px
+          position: relative
+          &:after
+            content: ''
+            width: 100%
+            border: 1px dashed #CCCCCC
+            position: absolute
+            left: 0
+            bottom: 2px
+        &:nth-child(2n)
+          background: #EEEEEE
+  .items
+    padding-top: 150px
+  .text-block
+    padding: 0 0 150px
+
+/* Cart */
+.cart
+  padding-top: 20px
+  &-items
+    margin-top: 20px
+  &-item
+    margin-top: 20px
+    border: 1px solid #EEEEEE
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07)
+    display: flex
+    align-items: center
+    position: relative
+    &-img
+      flex-basis: 140px
+      padding: 20px 0 20px 20px
+      box-sizing: border-box
+      img
+        height: 75px
+        width: auto
+    &-info
+      flex-basis: 840px
+      padding: 20px 140px 20px 0
+      box-sizing: border-box
+      h3
+        font-size: 16px
+        line-height: 19px
+        color: $black
+        margin: 0
+    &-property
+      display: flex
+      margin-top: 15px
+      p
+        font-size: 12px
+        line-height: 14px
+        color: $black
+        margin: 0 5px 0
+        span
+          color: #9E9E9E
+          margin: 0 10px
+      .color
+        p
+          display: flex
+          align-items: center
+        &-square
+          width: 14px
+          height: 14px
+          display: inline-block
+    &-price
+      flex-basis: calc(100% - 980px)
+      font-size: 18px
+      line-height: 22px
+      font-weight: 500
+      color: $black
+      padding: 20px 75px 20px 0
+      box-sizing: border-box
+      position: relative
+      &.discount
+        .old-price
+          position: absolute
+          top: 50%
+          transform: translateY(-7px)
+          right: 100%
+          display: flex
+          padding-right: 5px
+          justify-content: flex-end
+          width: 120px
+          .percent
+            font-size: 14px
+            line-height: 17px
+            color: $red
+          strike
+            color: #646568
+            font-size: 14px
+            line-height: 17px
+            margin-left: 5px
+        .new-price
+          color: $red
+          font-size: 18px
+          line-height: 21px
+    &-delete
+      position: absolute
+      width: 55px
+      right: 0
+      top: 0
+      height: 100%
+      button
+        width: 100%
+        height: 100%
+        background: #EEEEEE
+        padding: 0
+        border: none
+        &:hover
+          cursor: pointer
+
+/* Cart payment */
+.cart
+  &-payment
+    padding-top: 100px
+    &-container
+      display: flex
+      padding-top: 100px
+      justify-content: space-between
+    &-info
+      flex-basis: 415px
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1)
+      border-radius: 5px
+      padding: 40px
+      box-sizing: border-box
+      .total
+        font-size: 24px
+        font-weight: 700
+        display: flex
+        justify-content: space-between
+        padding-bottom: 15px
+      &-block
+        margin-top: 15px
+        display: flex
+        justify-content: space-between
+        color: $black
+        font-size: 16px
+        .discount-text
+          color: $red
+      &-delivery
+        margin-top: 35px
+        p
+          color: $black
+          font-size: 16px
+          font-weight: 500
+          margin: 0
+        span
+          color: $black
+          font-size: 14px
+          margin-top: 10px
+          display: inline-block
+          &.date
+            margin-right: 20px
+    &-btn
+      margin-top: 50px
+      input
+        width: 100%
+        padding: 22px 0
+        border: none
+        font-size: 20px
+        font-weight: 700
+        border-radius: 5px
+        &:hover
+          cursor: pointer
+
+/* Contact page */
+.contact-page
+  padding: 50px 0 125px
+  &-block
+    display: flex
+    justify-content: space-between
+    margin-bottom: 130px
+  &-info
+    flex-basis: calc(100% - 700px)
+    padding-right: 70px
+    box-sizing: border-box
+    h2
+      font-size: 30px
+      line-height: 39px
+      margin: 0
+    p
+      color: #646568
+      font-size: 20px
+      line-height: 26px
+      margin: 0
+    ul
+      padding: 0
+      margin: 0
+      li
+        font-size: 20px
+        line-height: 26px
+        list-style: none
+        a
+          color: #646568
+  &-map
+    width: 700px
+    position: relative
+    overflow: hidden
+    &-container
+      position: absolute
+      width: 100%
+      top: 50%
+      transform: translateY(-50%)
+  &-heading
+    font-weight: 500
+    font-size: 20px
+    color: $black
+    margin-bottom: 10px
+  .address, .work-time, .telephone
+    padding-left: 26px
+    margin-top: 25px
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      width: 24px
+      height: 24px
+  .address
+    &:before
+      background: url(../img/location.png) no-repeat center center
+      top: -2px
+  .work-time
+    &:before
+      background: url(../img/calendar.png) no-repeat center center
+      top: -4px
+  .telephone
+    &:before
+      top: 1px
+      background: url(../img/phone.png) no-repeat center center
+  &-container
+    display: flex
+    column-gap: 100px
+    h2
+      font-size: 30px
+      margin: 0
+    p
+      font-size: 14px
+      line-height: 21px
+      margin: 10px 0 0
+      a
+        color: $blue
+        border-bottom: 1px solid $blue
+    ul
+      padding: 0
+      margin: 20px 0 0
+      display: flex 
+      li
+        list-style: none
+  &-column
+    flex-basis: 50%
+    &:nth-child(2)
+      flex-basis: 700px
+    &:first-child
+      flex-basis: calc(100% - 700px)
+    form
+      width: 490px
+      margin-top: 20px
+      p
+        display: flex
+        column-gap: 15px
+        margin: 0
+        &:nth-child(2)
+          span
+            flex-basis: 100%
+        span
+          flex-basis: 50%
+          label
+            font-size: 12px
+            color: $grey
+            margin-bottom: 10px
+            display: block
+          input:not([type=submit])
+            width: 100%
+            height: 42px
+            border: 1px solid #cccccc
+            border-radius: 5px
+            padding: 0 15px
+            box-sizing: border-box
+            font-size: 12px
+            color: $black
+            &::-moz-placeholder
+              color: #cccccc
+              opacity: 1
+            &::-webkit-input-placeholder
+              color: #cccccc
+              opacity: 1
+          textarea
+            width: 100%
+            height: 120px
+            border: 1px solid #cccccc
+            border-radius: 5px
+            padding: 15px
+            box-sizing: border-box
+            font-size: 12px
+            color: $black
+            resize: none
+            margin-top: 15px
+            &::-moz-placeholder
+              color: #cccccc
+              opacity: 1
+              font-family: $mFont, $hFont, sans-serif
+            &::-webkit-input-placeholder
+              color: #cccccc
+              opacity: 1
+              font-family: $mFont, $hFont, sans-serif
+      input[type=submit]
+        width: 256px
+        margin-top: 20px
+        border: none
+        font-size: 16px
+        font-weight: 700
+        &:hover
+          cursor: pointer
+  &-payment
+    ul
+      margin-left: -12px
+      li
+        &:not(:last-child)
+          margin-right: 15px
+  &-social
+    margin-top: 55px
+    ul
+      li
+        &:not(:last-child)
+          margin-right: 25px

@@ -12,6 +12,10 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
+
 if ( ! function_exists( 'chair_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -50,7 +54,8 @@ if ( ! function_exists( 'chair_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'chair' ),
+				'header_menu' => 'Меню в шапке',
+                'footer_menu' => 'Меню в футере'
 			)
 		);
 
@@ -143,6 +148,20 @@ function chair_scripts() {
 	wp_enqueue_style( 'chair-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'chair-style', 'rtl', 'replace' );
 
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', get_template_directory_uri() . '/assets/lib/jquery/jquery.js');
+    wp_enqueue_script( 'jquery' );
+
+    wp_enqueue_script( 'chair-slick', get_template_directory_uri() . '/assets/lib/slick/slick.min.js', array(), _S_VERSION, true );
+
+    wp_enqueue_script( 'chair-ui-slider', get_template_directory_uri() . '/assets/lib/ui-slider/jquery-ui.min.js', array(), _S_VERSION, true );
+
+    wp_enqueue_script( 'chair-ui-slider-touch', get_template_directory_uri() . '/assets/lib/ui-slider/jquery.ui.touch-punch.min.js', array(), _S_VERSION, true );
+
+    wp_enqueue_script( 'chair-form', get_template_directory_uri() . '/assets/lib/form-styler/jquery.formstyler.min.js', array(), _S_VERSION, true );
+
+    wp_enqueue_script( 'chair-script', get_template_directory_uri() . '/assets/js/script.js', array(), _S_VERSION, true );
+
 	wp_enqueue_script( 'chair-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -150,6 +169,11 @@ function chair_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'chair_scripts' );
+
+## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива
+add_filter( 'get_the_archive_title', function( $title ){
+    return preg_replace('~^[^:]+: ~', '', $title );
+});
 
 /**
  * Implement the Custom Header feature.
@@ -178,3 +202,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Load WooCommerce compatibility file.
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/inc/woocommerce.php';
+}
