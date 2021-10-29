@@ -61,6 +61,22 @@ body {
   display: inline-block;
 }
 
+.wpcf7-spinner {
+  display: none !important;
+}
+.wpcf7-not-valid {
+  border-color: #B3383B !important;
+}
+.wpcf7-not-valid-tip {
+  display: none;
+}
+.wpcf7-response-output {
+  padding: 0 !important;
+  border: none !important;
+  margin: 10px 0 0 !important;
+  text-align: center;
+}
+
 /* Top Header */
 .top-header {
   background: #262E38;
@@ -446,6 +462,7 @@ body {
   color: #999999;
   text-align: center;
   margin-top: 10px;
+  flex-basis: 100%;
 }
 .contact-form form {
   width: 515px;
@@ -469,9 +486,10 @@ body {
   display: flex;
   column-gap: 40px;
   margin: 0;
+  flex-wrap: wrap;
 }
 .contact-form form p span {
-  flex-basis: 50%;
+  flex-basis: calc(50% - 20px);
 }
 .contact-form form p span input:not([type=submit]) {
   width: 100%;

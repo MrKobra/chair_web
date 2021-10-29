@@ -332,6 +332,7 @@
     color: $grey
     text-align: center
     margin-top: 10px
+    flex-basis: 100%
   form
     width: 515px
     margin-top: 40px
@@ -351,8 +352,9 @@
       display: flex
       column-gap: 40px
       margin: 0
+      flex-wrap: wrap
       span
-        flex-basis: 50%
+        flex-basis: calc(50% - 20px)
         input
           &:not([type=submit])
             width: 100%
