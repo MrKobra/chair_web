@@ -55,7 +55,8 @@ if ( ! function_exists( 'chair_setup' ) ) :
 		register_nav_menus(
 			array(
 				'header_menu' => 'Меню в шапке',
-                'footer_menu' => 'Меню в футере'
+                'client_menu' => 'Меню "Покупателям"',
+                'support_menu' => 'Меню "Помощь"'
 			)
 		);
 
@@ -174,6 +175,12 @@ add_action( 'wp_enqueue_scripts', 'chair_scripts' );
 add_filter( 'get_the_archive_title', function( $title ){
     return preg_replace('~^[^:]+: ~', '', $title );
 });
+
+// Шорткоды
+require get_template_directory() . '/inc/shortcodes.php';
+
+// Функции вукомерса
+require get_template_directory() . '/inc/woocommerce-functions.php';
 
 /**
  * Implement the Custom Header feature.
