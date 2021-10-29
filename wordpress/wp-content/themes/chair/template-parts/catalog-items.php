@@ -13,7 +13,7 @@
 
         <?php
         $query_args = array(
-            'post_type' => 'product',
+            'post_type' => 'product_variation',
             'post_status' => 'publish',
             'posts_per_page' => $args['posts_per_page'],
         );
