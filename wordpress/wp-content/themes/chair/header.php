@@ -69,6 +69,7 @@ $args = [
     'taxonomy'      => 'product_cat',
     'orderby'       => 'id',
     'order'         => 'DESC',
+    'parent'        => 0,
     'hide_empty'    => false,
     'exclude'       => array(15),
     'update_term_meta_cache' => true,
