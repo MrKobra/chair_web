@@ -19,9 +19,9 @@ $(document).ready(function(){
     // Стилизация
     $('#catalog-sort').styler();
     $('#items-count').styler();
-    $('#color-var').styler();
+    $('#pa_cvet').styler();
     $('#count-var').styler();
-    $('#size-var').styler();
+    $('#pa_razmer').styler();
     $('.catalog-sidebar-slider input').styler();
     // Ввод только цифр
     $('.catalog-sidebar-slider input').keydown(function (event){
@@ -137,14 +137,33 @@ $(document).ready(function(){
     });
     // Выбор цвета
     function selectColor(){
-        var color = $('#color-var option:selected').data('color');
-        $('#color-var').parent().find('.jq-selectbox__select').css('background', color);
+        var color = $('#pa_cvet option:selected').data('color');
+        $('#pa_cvet').parent().find('.jq-selectbox__select').css('background', color);
     }
     selectColor();
-    $('#color-var').on('change', function(){
+    $('#pa_cvet').on('change', function(){
         selectColor();
     })
-    $('#color-var').parent().find('.jq-selectbox__dropdown li').each(function(){
+    $('#pa_cvet').parent().find('.jq-selectbox__dropdown li').each(function(){
         $(this).css('background', $(this).data('color'));
+    })
+    // Выбор количества элементов
+    $('select[name=item-count]').on('change', function(){
+        $('input[name=quantity]').val($(this).val());
+    })
+    // Изменение размера в характеристиках
+    function setSizeProperty() {
+        if($('#pa_razmer').length != 0) {
+            var width = $('#pa_razmer').find('option:selected').data('width');
+            var height = $('#pa_razmer').find('option:selected').data('height');
+            var length = $('#pa_razmer').find('option:selected').data('length');
+            $('.single-item-property li.width').html('<span>Ширина</span> '+width);
+            $('.single-item-property li.height').html('<span>Высота</span> '+height);
+            $('.single-item-property li.length').html('<span>Глубина</span> '+length);
+        }
+    }
+    setSizeProperty();
+    $('#pa_razmer').on('change', function(){
+        setSizeProperty();
     })
 })

@@ -1,6 +1,6 @@
 <div class="items popular-items">
     <div class="container">
-        <?php if($args['heading']): ?>
+        <?php if(isset($args['heading'])): ?>
         <div class="heading">
             <h2><?php echo $args['heading'] ?></h2>
             <?php if(is_front_page()): ?>
@@ -13,15 +13,36 @@
 
         <?php
         $query_args = array(
-            'post_type' => 'product_variation',
+            'post_type' => array('product', 'product_variation'),
             'post_status' => 'publish',
-            'posts_per_page' => $args['posts_per_page'],
+            'posts_per_page' => 4,
+            'tax_query' => array()
         );
-        if($args['kind'] == 'popular') {
-            $query_args['meta_key'] = 'total_sales';
-            $query_args['orderby'] = 'meta_value_num';
+        if(isset($args['posts_per_page'])) {
+            $query_args['posts_per_page'] = $args['posts_per_page'];
+        }
+        if(isset($args['kind'])) {
+            if($args['kind'] == 'popular') {
+                $query_args['meta_key'] = 'total_sales';
+                $query_args['orderby'] = 'meta_value_num';
+            }
+        }
+        if(isset($args['orderby'])) {
+            $query_args['orderby'] = $args['orderby'];
+        }
+        if(isset($args['cat'])) {
+            array_push($query_args['tax_query'], [
+                    'taxonomy' => 'product_cat',
+                    'field' => 'id',
+                    'terms' => $args['cat']
+            ]);
+            $query_args['include_parent_cat'] = true;
+            add_filter( 'posts_join' , "include_parent_categories_item", 99, 2);
         }
         $query = new WP_Query($query_args);
+        if(isset($args['cat'])) {
+            remove_filter( 'posts_join' , "include_parent_categories_item", 99, 2);
+        }
         if($query->have_posts()):
         ?>
         <div class="items-container">

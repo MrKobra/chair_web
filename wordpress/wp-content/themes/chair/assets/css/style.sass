@@ -942,7 +942,7 @@
       margin: 0 auto
       height: auto
     &-container
-      background-size: cover!important
+      //background-size: cover!important
   &-slider
     &-big
       .single-item
@@ -976,6 +976,8 @@
     &-small
       margin: 0 -5px
       padding: 0 29px
+      .single-item-slide-container
+        background-size: cover!important
       .slick-prev, .slick-next
         width: 9px
         height: 16px
@@ -1007,6 +1009,10 @@
     padding-left: 50px
     flex-basis: calc(100% - 655px)
     box-sizing: border-box
+    .out-of-stock
+      margin: 30px 0 0
+      font-size: 16px
+      font-weight: 500
     span
       font-size: 14px
       line-height: 17px
@@ -1019,21 +1025,39 @@
       margin: 30px 0 0
     .category
       margin-top: 5px
+      a
+        color: #646568
+  .woocommerce-variation
+    &-description
+      display: none
+    &-price
+      del
+        display: none
+      .amount, .woocommerce-Price-currencySymbol
+        font-size: 28px
+        line-height: 33px
+        color: $black
+        font-weight: 500
+      ins
+        text-decoration: none
   &-price
     margin-top: 30px
     display: flex
-    align-items: center
+    column-gap: 15px
+    transform: translateY(-3px)
     .price
       font-size: 28px
       line-height: 33px
       color: $black
       font-weight: 500
-      padding-right: 15px
     .addToCart
-      a
+      button
+        border: none
         width: 220px
         font-size: 13px
         border-radius: 5px
+        &:hover
+          cursor: pointer
   .description
     margin-top: 30px
     p
@@ -1044,9 +1068,10 @@
   &-var
     display: flex
     margin-top: 30px
-    .color, .count, .size
+    column-gap: 35px
+    .pa_cvet, .count, .pa_razmer
       padding-right: 19px
-    .color
+    .pa_cvet
       .jq-selectbox
         &__select
           width: 30px
@@ -1064,7 +1089,8 @@
               width: 30px
               height: 30px
     .count
-      margin-left: 25px
+      input
+        display: none
       .jq-selectbox
         &__select
           width: 30px
@@ -1091,8 +1117,7 @@
               align-items: center
               justify-content: center
               font-size: 14px
-    .size
-      margin-left: 45px
+    .pa_razmer
       .jq-selectbox
         &__select
           display: flex

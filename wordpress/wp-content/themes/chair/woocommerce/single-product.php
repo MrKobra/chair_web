@@ -25,7 +25,6 @@ woocommerce_breadcrumb();
 
 <div class="single-item">
 	<div class="single-item-block">
-		<div class="container">
 
 	<?php
 		/**
@@ -60,7 +59,6 @@ woocommerce_breadcrumb();
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
-		</div>
 	</div>
 </div>
 <?php
