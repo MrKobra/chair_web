@@ -60,7 +60,12 @@ function custom_loop_item_title() {
 add_action('woocommerce_shop_loop_item_title', 'custom_loop_item_category', 15);
 function custom_loop_item_category() {
     global $product;
-    $cat = get_the_terms($product->get_id(), 'product_cat');
+    if($product->is_type('variation')) {
+        $parent_id = $product->get_parent_id();
+    } else {
+        $parent_id = $product->get_id();
+    }
+    $cat = get_the_terms($parent_id, 'product_cat');
     if($cat): ?>
     <div class="items-card-cat">
         <?php echo $cat[0]->name; ?>

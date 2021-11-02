@@ -23,9 +23,10 @@ global $product;
 ?>
 
 <div class="items-card-price">
-    <?php if($product->is_on_sale()) { ?>
+    <?php if($product->is_on_sale() && $product->is_type('variation') || $product->is_type('simple')) { ?>
         <p><?php echo format_price($product->get_price())?> <strike><?php echo format_price($product->get_regular_price()) ?></strike></p>
     <?php } else { ?>
         <p><?php echo format_price($product->get_price()) ?></p>
-    <?php } ?>
+    <?php }
+    ?>
 </div>
