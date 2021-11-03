@@ -256,7 +256,7 @@
       a
         width: 100%
     &-hidden
-      z-index: 2
+      z-index: 20
       display: none
       position: absolute
       background: #ffffff
@@ -718,17 +718,24 @@
         a
           color: $grey
         &.next, &.prev
-          width: 9px
-          height: 16px
-          background: url(../img/page-nav-arrow.png) no-repeat center center
           position: absolute
           top: 9px
+          width: 9px
+          height: 16px
           margin: 0
+          a
+            width: 9px
+            height: 16px
+            background: url(../img/page-nav-arrow.png) no-repeat center center
+            position: absolute
+            top: 0
+            left: 0
         &.next
           right: 0
         &.prev
           left: 0
-          transform: rotate(-180deg)
+          a
+            transform: rotate(-180deg)
   &-items
     &-count
       span

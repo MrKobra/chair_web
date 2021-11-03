@@ -372,7 +372,7 @@ body {
   width: 100%;
 }
 .items-card-hidden {
-  z-index: 2;
+  z-index: 20;
   display: none;
   position: absolute;
   background: #ffffff;
@@ -919,18 +919,27 @@ body {
   color: #999999;
 }
 .catalog-page-nav .page-nav li.next, .catalog-page-nav .page-nav li.prev {
+  position: absolute;
+  top: 9px;
+  width: 9px;
+  height: 16px;
+  margin: 0;
+}
+.catalog-page-nav .page-nav li.next a, .catalog-page-nav .page-nav li.prev a {
   width: 9px;
   height: 16px;
   background: url(../img/page-nav-arrow.png) no-repeat center center;
   position: absolute;
-  top: 9px;
-  margin: 0;
+  top: 0;
+  left: 0;
 }
 .catalog-page-nav .page-nav li.next {
   right: 0;
 }
 .catalog-page-nav .page-nav li.prev {
   left: 0;
+}
+.catalog-page-nav .page-nav li.prev a {
   transform: rotate(-180deg);
 }
 .catalog-items-count span {

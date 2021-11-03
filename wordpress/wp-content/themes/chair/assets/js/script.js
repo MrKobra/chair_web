@@ -166,4 +166,26 @@ $(document).ready(function(){
     $('#pa_razmer').on('change', function(){
         setSizeProperty();
     })
+    // Количество выводимых постов
+    $('#items-count').on('change', function(){
+        var count = $(this).val();
+        var url = window.location.protocol + '//' + window.location.hostname + window.location.pathname;
+        var search = window.location.search;
+        if(search.length == 0) {
+            url = url + '?count='+value;
+        } else {
+            search = search.split('&');
+            $.each(search, function(index, value) {
+                var item = value.split('=');
+                if(item[0] == 'count') {
+                    url = url + '&count=' + count;
+                } else if(item[0] == '?count') {
+                    url = url + '?count=' + count;
+                } else if(item[0] != 'page' && item[0] != '?page'){
+                    url = url + value;
+                }
+            })
+        }
+        window.location.href = url;
+    })
 })
