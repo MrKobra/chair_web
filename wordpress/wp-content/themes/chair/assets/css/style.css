@@ -1624,15 +1624,15 @@ body {
   top: 0;
   height: 100%;
 }
-.cart-item-delete button {
+.cart-item-delete a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   background: #EEEEEE;
   padding: 0;
   border: none;
-}
-.cart-item-delete button:hover {
-  cursor: pointer;
 }
 
 /* Cart payment */

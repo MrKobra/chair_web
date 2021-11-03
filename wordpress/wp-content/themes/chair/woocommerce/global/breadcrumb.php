@@ -33,7 +33,11 @@ if ( ! empty( $breadcrumb ) ) {
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
 			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
 		} else {
-			echo esc_html( $crumb[0] );
+		    if(is_checkout()) {
+		        echo 'Корзина';
+            } else {
+                echo esc_html($crumb[0]);
+            }
 		}
 
 		echo '</li>';

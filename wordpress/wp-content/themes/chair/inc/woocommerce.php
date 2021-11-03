@@ -182,7 +182,7 @@ if ( ! function_exists( 'chair_woocommerce_cart_link' ) ) {
 	function chair_woocommerce_cart_link() {
 		?>
         <div class="bottom-header-cart">
-            <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="bottom-header-cart-container">
+            <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="bottom-header-cart-container">
                 <p>Корзина</p>
                 <strong><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></strong>
                 <span><?php echo WC()->cart->get_cart_contents_count() ?></span>
