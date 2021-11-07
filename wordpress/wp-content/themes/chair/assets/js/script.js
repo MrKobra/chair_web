@@ -188,4 +188,205 @@ $(document).ready(function(){
         }
         window.location.href = url;
     })
+    // Изменение типа поля
+    if($('#billing_agreement_agree').length != 0) {
+        $('#billing_agreement_agree').attr('type', 'checkbox');
+    }
+    function billingAgreementChange() {
+        if($('#billing_agreement_agree').prop('checked')) {
+            $('#billing_agreement_agree').parent().find('label').addClass('active');
+        } else {
+            $('#billing_agreement_agree').parent().find('label').removeClass('active');
+        }
+    }
+    billingAgreementChange();
+    $('#billing_agreement_agree').on('change', function(){
+        billingAgreementChange();
+    })
+    // Изменение активного элемента способа оплаты
+    function setPayment() {
+        $('#payment li').removeClass('active');
+        $('#payment input:checked').parents('li').addClass('active');
+    }
+    $(document).on('change', '#payment input', function(){
+        setPayment();
+    })
+    $(document).on('click', '#payment li', function(){
+        $(this).find('input').prop('checked', 'checked');
+        setPayment();
+    })
+    // Выбор доставки
+    function setDelivery() {
+        if($('input[name=ship_type]').length != 0) {
+            $('.delivery-type').removeClass('active');
+            $('.shipping-block').hide();
+            var cur = $('input[name=ship_type]:checked').val();
+            if(cur == 'delivery') {
+                $('#ship-to-different-address-checkbox').prop('checked', 'checked');
+            } else {
+                $('#ship-to-different-address-checkbox').prop('checked', false);
+            }
+            $('#'+cur).show();
+            $('input[name=ship_type]:checked').parents('.delivery-type').addClass('active');
+            $('#billing_delivery option[value='+cur+']').prop('selected', 'selected');
+            $.ajax({
+                method: 'POST',
+                url: myajax.url,
+                async: false,
+                dataType: 'json',
+                data: {
+                    action: 'set_delivery_cost',
+                    nonce_code: myajax.nonce,
+                    delivery: cur,
+                },
+            })
+        }
+    }
+    setDelivery();
+    $('input[name=ship_type]').on('change', function(){
+        setDelivery();
+        //window.location.href = window.location.href;
+    })
+    $('.delivery-type').on('click', function(){
+        $(this).find('input').prop('checked', 'checked');
+        setDelivery();
+        //window.location.href = window.location.href;
+    })
+    function setDeliveryInfo() {
+        if($('.cart-payment-info-delivery').length != 0) {
+            $('.cart-payment-info-delivery .date').text($('input[name=shipping_date]').val());
+            $('.cart-payment-info-delivery .time').text($('input[name=shipping_time]').val());
+        }
+    }
+    setDeliveryInfo();
+    // Вывод списка дат
+    $(function(){
+        if($('input[name=shipping_date]').length != 0) {
+            $.ajax({
+                method: 'POST',
+                url: myajax.url,
+                async: false,
+                dataType: 'json',
+                data: {
+                    action: 'delivery_data',
+                    nonce_code: myajax.nonce,
+                },
+                success: function (data) {
+                    if(data) {
+                        $('#shipping_date_field label').after('<select name="shipping_date_select"></select>');
+                        var i = 0;
+                        $.each(data, function(index, value) {
+                            i++;
+                            if(i == 1) {
+                                $('#shipping_date_field select').append('<option selected="selected" value="' + value + '">' + value + '</option>');
+                            } else {
+                                $('#shipping_date_field select').append('<option value="' + value + '">' + value + '</option>');
+                            }
+                        })
+                        setDeliveryDate();
+                        $('select[name=shipping_date_select]').styler();
+                    }
+                },
+            })
+        }
+    })
+    function setDeliveryDate() {
+        var value = $('select[name=shipping_date_select]').val();
+        $('input[name=shipping_date]').val(value);
+    }
+    $(document).on('change', 'select[name=shipping_date_select]', function(){
+        setDeliveryDate();
+        setDeliveryInfo();
+    })
+    // Выбор времени
+    $(function(){
+        if($('input[name=shipping_time]').length != 0) {
+            $.ajax({
+                method: 'POST',
+                url: myajax.url,
+                async: false,
+                dataType: 'json',
+                data: {
+                    action: 'delivery_time',
+                    nonce_code: myajax.nonce,
+                },
+                success: function (data) {
+                    if(data) {
+                        $('#shipping_time_field label').after('<select name="shipping_time_select"></select>');
+                        var i = 0;
+                        $.each(data, function(index, value) {
+                            i++;
+                            if(i == 1) {
+                                $('#shipping_time_field select').append('<option selected="selected" value="' + value + '">' + value + '</option>');
+                            } else {
+                                $('#shipping_time_field select').append('<option value="' + value + '">' + value + '</option>');
+                            }
+                        })
+                        setDeliveryTime();
+                        $('select[name=shipping_time_select]').styler();
+                    }
+                },
+            })
+        }
+    })
+    function setDeliveryTime() {
+        var value = $('select[name=shipping_time_select]').val();
+        $('input[name=shipping_time]').val(value);
+    }
+    $(document).on('change', 'select[name=shipping_time_select]', function(){
+        setDeliveryTime();
+        setDeliveryInfo();
+    })
+    // Выбор магазин
+    function setShop(){
+        if($('input[name=shipping_shop_title]').length != 0) {
+            $('.shipping_shop-card label').removeClass('active');
+            $('input[name=shipping_shop_title]:checked').parent().addClass('active');
+            var value = $('input[name=shipping_shop_title]:checked').val();
+            $('input[name=billing_shop]').val(value);
+        }
+    }
+    setShop();
+    $('input[name=shipping_shop_title]').on('change', function(){
+        setShop();
+    })
+    // Кнопка оформить заказ
+    $('.fake_btn').on('click', function(e){
+        e.preventDefault();
+        $('.woocommerce-NoticeGroup').remove();
+        var flag = true;
+        if($('input[name=ship_type]:checked').val() == 'delivery') {
+            var error = [];
+            if($('input[name=shipping_town]').val().length == 0) {
+                error.push('<strong>Город для выставления счета</strong> является обязательным полем');
+                flag = false;
+            }
+            if($('input[name=shipping_street]').val().length == 0) {
+                error.push('<strong>Улица для выставления счета</strong> является обязательным полем');
+                flag = false;
+            }
+            if($('input[name=shipping_house]').val().length == 0) {
+                error.push('<strong>Дом для выставления счета</strong> является обязательным полем');
+                flag = false;
+            }
+            if($('input[name=shipping_tel]').val().length == 0) {
+                error.push('<strong>Телефон для выставления счета</strong> является обязательным полем');
+                flag = false;
+            }
+            if(flag) {
+                $('input[name=billing_shop]').val('');
+                $('.order_btn').trigger('click');
+            } else {
+                $('.cart-items').before('<div class="woocommerce-NoticeGroup woocommerce-NoticeGroup-checkout"><ul class="woocommerce-error"></ul></ul></div>');
+                $.each(error, function(index, value) {
+                    $('.woocommerce-NoticeGroup ul').append('<li>'+value+'</li>');
+                })
+                $('html, body').animate({
+                    scrollTop: $('.cart').offset().top
+                }, 300)
+            }
+        } else {
+            $('.order_btn').trigger('click');
+        }
+    })
 })

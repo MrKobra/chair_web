@@ -99,3 +99,26 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices' );
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+
+add_action( 'woocommerce_cart_calculate_fees', 'delivery_set_cost', 25 );
+function delivery_set_cost($cart) {
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
+        return;
+    }
+
+    $value = WC()->session->get( 'delivery_radio' );
+
+    $total = 0;
+    foreach ($cart->get_cart() as $cart_item_key => $cart_item) {
+        $_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
+        $total  += $_product->get_price();
+    }
+
+    if($value == 'delivery' && $total <= (int)get_field('delivery_delimiter', 'options')) {
+        $cart->add_fee('Доставка', (int)get_field('delivery_cost', 'options'));
+    } else {
+        $cart->add_fee('Доставка', 0);
+    }
+}
+

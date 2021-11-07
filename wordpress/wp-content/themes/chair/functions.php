@@ -171,10 +171,25 @@ function chair_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'chair_scripts' );
 
+add_action( 'wp_enqueue_scripts', 'myajax_data', 99 );
+function myajax_data(){
+
+    wp_localize_script( 'chair-script', 'myajax',
+        array(
+            'url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('myajax-nonce')
+        )
+    );
+
+}
+
 ## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива
 add_filter( 'get_the_archive_title', function( $title ){
     return preg_replace('~^[^:]+: ~', '', $title );
 });
+
+// Ajax функции
+require get_template_directory() . '/inc/ajax-functions.php';
 
 // Шорткоды
 require get_template_directory() . '/inc/shortcodes.php';
