@@ -47,9 +47,9 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
          */
         ?>
         <div class="single-item-price">
-        <?php
-        do_action( 'woocommerce_single_variation' );
-        ?>
+            <?php
+            do_action( 'woocommerce_single_variation' );
+            ?>
         </div>
         <?php
         /**
@@ -73,6 +73,31 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
             do_action( 'woocommerce_after_add_to_cart_quantity' );
             ?>
             <?php foreach ( $attributes as $attribute_name => $options ) : ?>
+                <div class="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>">
+                    <select data-attribute_name="<?php echo 'attribute_'.$attribute_name; ?>" name="fake_<?php echo $attribute_name; ?>">
+                        <?php
+                        $terms = wc_get_product_terms($product->get_id(), $attribute_name, array('fields' => 'all'));
+                        $selected = $_GET['attribute_'.$attribute_name];
+                        $i = 0;
+                        foreach($terms as $term) {
+                            $i++;
+                            ?>
+                            <option
+                                <?php if($attribute_name == 'pa_cvet') { ?> data-color="<?php echo get_field('color', 'pa_cvet_'.$term->term_id); ?>" <?php } ?>
+                                    class="attached enabled"
+                                    value="<?php echo $term->slug; ?>" <?php if($selected) { if($selected == $term->slug) { echo ''; } } else { if($i == 1) { echo ''; } } ?>
+                                <?php if($attribute_name == 'pa_razmer') {
+                                    echo 'data-width="'.get_field('width', 'pa_razmer_'.$term->term_id).'"';
+                                    echo 'data-length="'.get_field('length', 'pa_razmer_'.$term->term_id).'"';
+                                    echo 'data-height="'.get_field('height', 'pa_razmer_'.$term->term_id).'"';
+                                } ?>>
+                                <?php if($attribute_name != 'pa_cvet') { echo $term->name; } ?>
+                            </option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
                 <div class="variations <?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>">
                     <select id="<?php echo $attribute_name; ?>" data-attribute_name="attribute_<?php echo $attribute_name; ?>" name="attribute_<?php echo $attribute_name; ?>">
                         <?php
@@ -86,12 +111,12 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
                                 <?php if($attribute_name == 'pa_cvet') { ?> data-color="<?php echo get_field('color', 'pa_cvet_'.$term->term_id); ?>" <?php } ?>
                                     class="attached enabled"
                                     value="<?php echo $term->slug; ?>" <?php if($selected) { if($selected == $term->slug) { echo ''; } } else { if($i == 1) { echo ''; } } ?>
-                                    <?php if($attribute_name == 'pa_razmer') {
-                                        echo 'data-width="'.get_field('width', 'pa_razmer_'.$term->term_id).'"';
-                                        echo 'data-length="'.get_field('length', 'pa_razmer_'.$term->term_id).'"';
-                                        echo 'data-height="'.get_field('height', 'pa_razmer_'.$term->term_id).'"';
-                                    } ?>>
-                                <? if($attribute_name != 'pa_cvet') { echo $term->name; } ?>
+                                <?php if($attribute_name == 'pa_razmer') {
+                                    echo 'data-width="'.get_field('width', 'pa_razmer_'.$term->term_id).'"';
+                                    echo 'data-length="'.get_field('length', 'pa_razmer_'.$term->term_id).'"';
+                                    echo 'data-height="'.get_field('height', 'pa_razmer_'.$term->term_id).'"';
+                                } ?>>
+                                <?php if($attribute_name != 'pa_cvet') { echo $term->name; } ?>
                             </option>
                             <?php
                         }

@@ -2,7 +2,7 @@
 $current = 1;
 $count = $args['count'];
 $post_count = $args['max_page'];
-$max_page = (int)($post_count / $count) + 1;
+$max_page = ceil(($post_count / $count));
 if(isset($_GET['page'])) {
     $current = $_GET['page'];
 }

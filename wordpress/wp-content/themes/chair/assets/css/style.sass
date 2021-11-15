@@ -22,6 +22,8 @@
         line-height: 17px
         a
           color: #ffffff
+          &:hover
+            color: $blue
         &:not(:last-child)
           margin-right: 20px
   &-phone
@@ -36,6 +38,8 @@
         padding-left: 24px
         a
           color: #ffffff
+          &:hover
+            color: $blue
         &:before
           content: ''
           width: 14px
@@ -85,8 +89,10 @@
       border: none
       padding: 0
       box-sizing: border-box
+      transition: all .2s ease-in-out
       &:hover
         cursor: pointer
+        background: $red
   &-cart
     flex-basis: 358px
     text-align: right
@@ -104,6 +110,9 @@
         left: 0
         top: 50%
         margin-top: -21px
+      &:hover
+        p, strong
+          color: $red
     p
       font-size: 14px
       line-height: 16px
@@ -113,6 +122,7 @@
       font-size: 14px
       line-height: 16px
       font-weight: 500
+      transition: all .2s ease-in
     span
       font-size: 10px
       color: #ffffff
@@ -127,6 +137,7 @@
       border: 2px solid #ffffff
       left: -4px
       top: -11px
+      transition: all .2s ease-in
 
 /* Cat Nav */
 .cat-nav
@@ -148,6 +159,8 @@
         line-height: 19px
         display: flex
         align-items: center
+        &:hover
+          color: $red
       &:not(:last-child)
         margin-right: 28px
         a
@@ -161,6 +174,8 @@
 
 /* Items */
 .items
+  &.search-result
+    padding: 75px 0 150px
   &.popular-items
     padding: 150px 0 0
   &-card
@@ -204,12 +219,18 @@
       img
         max-width: 100%
         height: auto
+        max-height: 200px
+        width: auto
     h3
       font-weight: 500
       font-size: 16px
       line-height: 19px
       margin: 30px 0 0
-      color: $black
+      a
+        color: $black
+        &:hover
+          color: $red
+
     &-cat
       margin-top: 6px
       color: $grey
@@ -385,6 +406,9 @@
     border-bottom: 1px solid $red
     display: inline-block
     margin-top: 10px
+    &:hover
+      color: $blue
+      border-color: $blue
 
 // Our location
 .our-location
@@ -489,6 +513,8 @@
         margin-top: 15px
         a
           color: #CCCCCC
+          &:hover
+            color: $blue
   &-contact
     flex-basis: 255px
     ul
@@ -503,6 +529,8 @@
             color: #CCCCCC
         a
           color: $grey
+          &:hover
+            color: $blue
   &-bottom
     display: flex
     justify-content: space-between
@@ -556,6 +584,8 @@
         margin: -12px 0 0 -12px
       &:before
         display: none
+      &:not(.slick-disabled):hover
+        background: $red
       &.slick-disabled
         background: #C3E8E7
     .slick-next
@@ -567,7 +597,7 @@
         transform: rotate(-180deg)
   &-slide
     &-text
-      padding: 100px 0 15px 90px
+      padding: 50px 0 50px 50px
       box-sizing: border-box
       flex-basis: 585px
       h2
@@ -603,6 +633,7 @@
     padding: 0
     margin: 0
     display: flex
+    flex-wrap: wrap
     li
       list-style: none
       font-size: 14px
@@ -797,6 +828,8 @@
       font-size: 18px
       line-height: 22px
       color: #384255
+    #weight_range
+      display: none
     &-slider
       &:not(:first-child)
         margin-top: 36px
@@ -876,7 +909,7 @@
               right: 0
               top: 50%
               margin-top: -12px
-              transiton: all .2s linear
+              transition: all .2s linear
       .show-full-filter
         color: $black
         opacity: .8
@@ -898,6 +931,8 @@
         line-height: 23px
         position: relative
         padding-left: 24px
+        &:hover
+          cursor: pointer
         &:before
           content: ''
           width: 12px
@@ -924,14 +959,20 @@
       margin-top: 30px
       border-top: 1px solid rgba(133, 143, 164, 0.2)
       padding-top: 30px
-      a
-        width: 110px
+      .reset_btn
+        width: 100%
         background: transparent
         border: 1px solid $red
         color: $red
         border-radius: 4px
+        margin-top: 15px
+        &:hover
+          border-color: $blue
+          color: $blue
+      .filter_btn
+        width: 100%
+        border-radius: 4px
   .text-block
-    padding-top: 0
     .container
       display: block
 
@@ -1076,6 +1117,8 @@
     display: flex
     margin-top: 30px
     column-gap: 35px
+    .variations
+      display: none
     .pa_cvet, .count, .pa_razmer
       padding-right: 19px
     .pa_cvet
@@ -1278,6 +1321,7 @@
         p
           display: flex
           align-items: center
+          margin-left: 0
         &-square
           width: 14px
           height: 14px
@@ -1493,7 +1537,7 @@
             display: none
           #shipping_town_field, #shipping_street_field
             flex-basis: calc(50% - 6px)
-          #shipping_house_field, #shipping_corpus_field, #shipping_date_field
+          #shipping_house_field, #shipping_corpus_field, #shipping_flat_field
             flex-basis: calc(33.33% - 4px)
           #shipping_tel_field
             flex-basis: 255px
@@ -1814,9 +1858,9 @@
   &-column
     flex-basis: 50%
     &:nth-child(2)
-      flex-basis: 700px
+      flex-basis: calc(100% - 470px)
     &:first-child
-      flex-basis: calc(100% - 700px)
+      flex-basis: 470px
     form
       width: 490px
       margin-top: 20px
@@ -1927,3 +1971,59 @@
     line-height: 17px
     color: $black
     border-bottom: 1px solid $black
+    &:hover
+      color: $blue
+      border-color: $blue
+
+.not-found
+  padding: 30px 0
+  p
+    font-size: 16px
+    line-height: 24px
+    margin: 0 0 15px
+  a
+    color: $red
+    font-size: 16px
+    line-height: 24px
+    border-bottom: 1px solid $red
+
+.woocommerce
+  &-info, &-message
+    font-size: 16px
+    color: #ffffff
+    padding: 15px
+    margin: 0 0 30px
+    a
+      color: #ffffff
+      border-bottom: 1px solid #ffffff
+.woocommerce-notices-wrapper
+  p
+    font-size: 16px
+    color: #ffffff
+    padding: 15px
+    margin: 0 0 30px
+    a
+      color: #ffffff
+      border-bottom: 1px solid #ffffff
+  ul
+    padding: 10px 15px
+    margin: 30px 0
+    &.woocommerce-error
+      background: $red
+    li
+      list-style: none
+      color: #ffffff
+      font-size: 16px
+      line-height: 24px
+
+.page-wrapper
+  padding: 30px 0 100px
+  p
+    font-size: 16px
+    line-height: 24px
+    margin: 30px 0 0
+
+.mobile-nav, .mobile-filter-btn
+  display: none
+
+@import "media.sass"

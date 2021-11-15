@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-do_action( 'woocommerce_before_checkout_form', $checkout );
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
@@ -28,7 +27,9 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 woocommerce_breadcrumb();
 ?>
-
+<div class="container notice-wrapper">
+<?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
+</div>
 <div class="cart">
     <div class="container">
         <div class="cart-container">

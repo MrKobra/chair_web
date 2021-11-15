@@ -25,12 +25,33 @@ $status = get_field('item_status', $parent_id);
         </div>
         <?php endif ?>
         <div class="items-card-price">
-            <?php if($product->is_on_sale() && $product->is_type('variation') || $product->is_type('simple')) { ?>
-                <p><?php echo format_price($product->get_price())?> <strike><?php echo format_price($product->get_regular_price()) ?></strike></p>
-            <?php } else { ?>
+            <?php
+            if($product->is_on_sale()) {
+                $args = array(
+                    'post_type'     => 'product_variation',
+                    'post_status'   => array( 'private', 'publish' ),
+                    'numberposts'   => -1,
+                    'orderby'       => 'menu_order',
+                    'order'         => 'ASC',
+                    'post_parent'   => get_the_ID()
+                );
+                $variations = get_posts( $args );
+                if($variations) {
+                    foreach($variations as $variation) {
+                        $product_variation = new WC_Product_Variation( $variation->ID );
+                        if($product_variation->is_on_sale()) {
+                            ?>
+                            <p><?php echo format_price($product_variation->get_price())?> <strike><?php echo format_price($product_variation->get_regular_price()) ?></strike></p>
+                            <?php
+                            break;
+                        }
+                    }
+                } else { ?>
+                    <p><?php echo format_price($product->get_price())?> <strike><?php echo format_price($product->get_regular_price()) ?></strike></p>
+                <?php }
+            } else { ?>
                 <p><?php echo format_price($product->get_price()) ?></p>
-            <?php }
-            ?>
+            <?php } ?>
         </div>
         <?php woocommerce_template_loop_add_to_cart() ?>
     </div>

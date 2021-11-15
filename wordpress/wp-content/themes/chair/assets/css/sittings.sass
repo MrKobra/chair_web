@@ -15,12 +15,13 @@ $black : #262E38
 
 body
   font-family: $mFont, $hFont, sans-serif
+  position: relative
 
 .heading
   display: flex
   justify-content: space-between
   align-items: center
-  h2
+  h2, h1
     font-family: $mFont, $hFont, sans-serif
     font-size: 30px
     line-height: 36px
@@ -31,6 +32,8 @@ body
       color: $red
       font-weight: 500
       font-size: 18px
+      &:hover
+        color: $blue
   p
     font-size: 20px
     line-height: 30px
@@ -45,6 +48,9 @@ body
   line-height: 15px
   padding: 12px 0
   display: inline-block
+  transition: all .2s ease-in
+  &:hover
+    background: $blue
 
 .wpcf7
   &-spinner

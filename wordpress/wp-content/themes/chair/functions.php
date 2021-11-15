@@ -159,7 +159,7 @@ function chair_scripts() {
 
     wp_enqueue_script( 'chair-ui-slider-touch', get_template_directory_uri() . '/assets/lib/ui-slider/jquery.ui.touch-punch.min.js', array(), _S_VERSION, true );
 
-    wp_enqueue_script( 'chair-form', get_template_directory_uri() . '/assets/lib/form-styler/jquery.formstyler.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'chair-form', get_template_directory_uri() . '/assets/lib/form-styler/jquery.formstyler.min.js', array(), _S_VERSION );
 
     wp_enqueue_script( 'chair-script', get_template_directory_uri() . '/assets/js/script.js', array(), _S_VERSION, true );
 
@@ -181,6 +181,17 @@ function myajax_data(){
         )
     );
 
+}
+
+function get_key($array, $name) {
+    $result = 0;
+    foreach($array as $key => $value) {
+        if($name == $value) {
+            $result = $key;
+            break;
+        }
+    }
+    return $result;
 }
 
 ## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива

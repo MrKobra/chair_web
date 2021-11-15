@@ -13,7 +13,7 @@
 
         <?php
         $query_args = array(
-            'post_type' => array('product', 'product_variation'),
+            'post_type' => array('product'),
             'post_status' => 'publish',
             'posts_per_page' => 4,
             'tax_query' => array()
@@ -37,12 +37,8 @@
                     'terms' => $args['cat']
             ]);
             $query_args['include_parent_cat'] = true;
-            add_filter( 'posts_join' , "include_parent_categories_item", 99, 2);
         }
         $query = new WP_Query($query_args);
-        if(isset($args['cat'])) {
-            remove_filter( 'posts_join' , "include_parent_categories_item", 99, 2);
-        }
         if($query->have_posts()):
         ?>
         <div class="items-container">

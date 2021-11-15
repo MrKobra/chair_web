@@ -1,0 +1,767 @@
+@media (min-width: 1200px) and (max-width: 1300px)
+  .catalog
+    &-sidebar
+      flex-basis: calc(100% - 740px)
+    &-container
+      flex-basis: 740px
+      .items-card
+        flex-basis: calc(50% - 15px)
+
+  .container
+    width: 1140px
+
+  .cat-nav
+    &-container
+      padding: 18px 10px
+    ul
+      li
+        &:not(:last-child)
+          margin-right: 20px
+        a
+          font-size: 15px
+
+  .cart-item
+    &-price
+      flex-basis: calc(100% - 920px)
+    &-info
+      flex-basis: 780px
+
+  .cart-payment-data
+    .shipping_address
+      #shipping_house_field, #shipping_corpus_field, #shipping_flat_field
+          flex-basis: calc(33.33% - 8px)
+
+@media (min-width: 992px) and (max-width: 1200px)
+  .catalog
+    &-sidebar
+      flex-basis: calc(100% - 590px)
+    &-container
+      flex-basis: 590px
+      .items-card
+        flex-basis: calc(50% - 15px)
+
+  .single-item
+    &-img
+      width: 450px
+    &-info
+      flex-basis: calc(100% - 450px)
+
+  .contact-page
+    &-info
+      flex-basis: calc(100% - 550px)
+    &-map
+      width: 550px
+
+  .container
+    width: 960px
+
+  .cat-nav
+    &-container
+      padding: 18px 16px
+    ul
+      li
+        &:not(:last-child)
+          margin-right: 15px
+          span
+            margin-left: 0
+        img
+          display: none
+        a
+          font-size: 15px
+
+  .bottom
+    &-header
+      &-cart
+        flex-basis: 175px
+
+  .home
+    &-slide
+      &-text
+        flex-basis: 435px
+      &-img
+        flex-basis: calc(100% - 435px)
+
+  .items
+    &-card
+      flex-basis: calc(33.33% - 20px)
+
+  .advantages
+    &-container
+      column-gap: 20px
+
+  .contact-form
+    background-position: center left
+
+  .cart-item
+    &-price
+      flex-basis: calc(100% - 770px)
+    &-info
+      flex-basis: 630px
+      padding-right: 110px
+
+  .delivery-type, .cart-payment-data .woocommerce-checkout-payment ul li
+    flex-basis: 100%
+
+  .cart-payment-data
+    .shipping_address
+      #shipping_house_field, #shipping_tel_field
+        flex-basis: 100%
+      #shipping_corpus_field, #shipping_flat_field, #shipping_date_field, #shipping_time_field
+        flex-basis: calc(50% - 6px)
+
+
+@media (max-width: 1200px)
+  .cart-payment-data
+    .woocommerce-billing-fields, .woocommerce-checkout-payment ul, .delivery-type_container
+      width: 100%
+    .delivery-type
+      &_container
+        flex-wrap: wrap
+    .woocommerce-checkout-payment
+      ul
+        flex-wrap: wrap
+
+@media (min-width: 768px) and (max-width: 992px)
+  .catalog-container
+    .items-card
+      flex-basis: calc(50% - 15px)
+
+  .contact-page
+    &-map
+      height: 300px
+
+  .container, .catalog-sidebar-block
+    width: 720px
+
+  .bottom-header
+    &-cart
+      flex-basis: calc(100% - 585px)
+
+  .cat-nav
+    ul
+      flex-direction: column
+      align-items: center
+      li
+        a
+          line-height: 45px
+        &.stocks
+          img
+            display: none
+
+  .items
+    &-card
+      flex-basis: calc(50% - 15px)
+
+  .our-location
+    &-container
+      flex-wrap: wrap
+      row-gap: 40px
+    &-column
+      &:nth-child(2)
+        margin-left: auto
+
+  .cart-item
+    &-info
+      flex-basis: 395px
+    &-price
+      flex-basis: calc(100% - 535px)
+
+  .cart-payment
+    &-data
+      .delivery-type
+        flex-basis: calc(50% - 50px)
+      .shipping_address
+        #shipping_house_field, #shipping_corpus_field, #shipping_flat_field
+          flex-basis: calc(33.33% - 8px)
+
+@media (max-width: 992px)
+  .mobile-filter-btn
+    display: block
+    width: 120px
+    padding: 10px 0
+    background: transparent
+    border: 1px solid $red
+    color: $red
+    &.active
+      background: $red
+      color: #ffffff
+      position: absolute
+      z-index: 101
+      top: 20px
+      &:hover
+        background: $blue
+    &:hover
+      cursor: pointer
+      background: $blue
+      border-color: $blue
+      color: #ffffff
+  .catalog
+    &-sort
+      display: flex
+      justify-content: space-between
+      align-items: center
+    .container
+      flex-direction: column
+    &-sidebar
+      position: fixed
+      z-index: 100
+      width: 100%
+      height: 100vh
+      padding: 100px 0 75px 0
+      overflow-y: scroll
+      background: #ffffff
+      top: 0
+      left: 0
+      display: none
+      &-block
+        margin: 30px auto 0
+        padding: 0 15px
+        box-sizing: border-box
+        &:first-child
+          margin-top: 0
+    &-container
+      flex-basis: 100%
+
+  .single-item
+    &-container
+      flex-direction: column
+      row-gap: 30px
+    &-info
+      padding-left: 0
+      flex-basis: 100%
+
+  .contact-page
+    &-map
+      width: 100%
+    &-block
+      flex-direction: column
+      row-gap: 30px
+    &-info
+      flex-basis: 100%
+    &-container
+      flex-direction: column
+      row-gap: 55px
+    &-column
+      flex-basis: 100%!important
+
+  .woocommerce-order_container
+    width: 100%
+
+  .cart-item
+    &-property
+      flex-direction: column
+      row-gap: 5px
+      p
+        margin: 0
+
+  .bottom-header
+    .container
+      flex-wrap: wrap
+      justify-content: space-between
+    .logo
+      flex-basis: 100%
+      text-align: center
+      margin-bottom: 30px
+
+  .home
+    &-slide
+      &-container
+        flex-direction: column-reverse
+        padding: 50px
+      &-text
+        flex-basis: 100%
+        padding: 30px 0 0
+        text-align: center
+      &-img
+        flex-basis: 100%
+
+  .advantages
+    &-container
+      flex-wrap: wrap
+      row-gap: 30px
+    &-card
+      flex-basis: 100%
+      
+  .contact-form
+    background: #C3E8E7
+    &-container
+      text-align: center
+    &-heading
+      width: 100%
+    form
+      margin: 40px auto 0
+
+  .main-footer
+    &-top
+      flex-wrap: wrap
+      row-gap: 25px
+      text-align: center
+      .logo
+        margin-top: 15px
+        flex-basis: 100%
+    &-menu
+      flex-basis: 50%
+    &-contact
+      flex-basis: 100%
+    &-bottom
+      flex-direction: column-reverse
+      row-gap: 10px
+      .copy
+        text-align: center
+
+  .cart
+    &-payment
+      &-data
+        flex-basis: 100%
+        padding: 0
+      &-info
+        flex-basis: 100%
+      &-btn
+        display: none
+      &-container
+        flex-direction: column-reverse
+        row-gap: 30px
+
+@media (min-width: 576px) and (max-width: 992px)
+  .home-slide
+    &-text
+      p
+        font-size: 18px
+      h2
+        font-size: 38px
+        line-height: 46px
+
+@media (min-width: 576px) and (max-width: 768px)
+  .container, .catalog-sidebar-block
+    width: 540px
+
+  .contact-form
+    &-heading
+      h2
+        font-size: 28px
+        line-height: 36px
+      p
+        font-size: 16px
+
+  .contact-page
+    &-map
+      height: 300px
+
+@media (max-width: 768px)
+  .catalog-container
+    .items-card
+      flex-basis: 100%
+
+  .single-item
+    &-img
+      width: 100%
+    &-slider-big
+      .single-item-slide-container
+        background: transparent!important
+        height: auto
+        padding: 0 0 15px
+        img
+          display: block
+          max-width: 100%
+          height: auto
+
+  .cart-payment
+    &-data
+      .delivery-type, .woocommerce-checkout-payment ul li
+        flex-basis: 100%
+
+  .cart-item
+    flex-direction: column
+    padding: 20px
+    row-gap: 25px
+    text-align: center
+    &-info
+      padding: 0
+      flex-basis: 100%
+    &-img
+      flex-basis: 100%
+      padding: 0
+    &-property
+      .color
+        p
+          justify-content: center
+    &-price
+      padding: 0
+      display: flex
+      justify-content: center
+      flex-basis: 100%
+      &.discount
+        .old-price
+          position: static
+          transform: none
+          width: auto
+    &-delete
+      position: static
+      width: 100%
+      height: 55px
+  .bottom-header
+    &-cart
+      display: none
+  .mobile
+    &-nav
+      display: block
+      position: fixed
+      width: 100%
+      bottom: 0
+      left: 0
+      padding-bottom: 20px
+      z-index: 100
+      &.active
+        position: absolute
+      .container
+        display: flex
+        justify-content: center
+        column-gap: 30px
+      .bottom-header
+        &-cart
+          display: block
+          flex-basis: auto
+          a
+            width: 42px
+            height: 42px
+            border-radius: 50%
+            background: $blue
+            padding-left: 0
+            &:hover
+              background: $red
+              span
+                background: $red
+            span
+              background: $blue
+            p, strong
+              display: none
+            &:before
+              margin-left: -15px
+              margin-top: -15px
+              left: 50%
+              width: 30px
+              height: 30px
+              background-size: cover
+    &-cat
+      &-btn
+        width: 42px
+        height: 42px
+        background: $blue
+        position: relative
+        border-radius: 50%
+        transition: all .2s ease-in
+        &.active
+          span
+            &:nth-child(2)
+              display: none
+            &:first-child
+              transform: rotate(-45deg)
+              top: 50%
+            &:last-child
+              transform: rotate(45deg)
+              top: 50%
+        &:hover
+          cursor: pointer
+          background: $red
+        span
+          width: 26px
+          height: 2px
+          background: #ffffff
+          position: absolute
+          left: 50%
+          margin-left: -13px
+          transition: all .2s ease-in
+          &:first-child
+            top: 14px
+          &:nth-child(2)
+            top: 21px
+          &:last-child
+            top: 28px
+
+  .cat-nav
+    position: fixed
+    display: none
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background: #ffffff
+    z-index: 50
+    padding: 30px 0 100px
+    box-sizing: border-box
+    ul
+      flex-direction: column
+      max-height: calc(100vh - 130px)
+      overflow-y: auto
+      li
+        a
+          line-height: 60px
+    &-container
+      border: none
+      box-shadow: none
+      padding: 0
+
+  .items
+    &-card
+      flex-basis: 100%
+      padding-bottom: 30px
+      &-hidden
+        display: block!important
+        position: static
+        box-shadow: none
+        border: none
+        padding: 30px 0 0
+
+  .our-location
+    &-container
+      flex-direction: column
+      align-items: center
+      row-gap: 30px
+    &-column
+      flex-basis: 100%
+      max-width: 425px
+    .heading
+      width: 100%
+
+  .heading
+    flex-direction: column
+    align-items: flex-start
+    .more-link
+      margin-top: 10px
+
+@media (min-width: 480px) and (max-width: 768px)
+  .cart-payment
+    padding: 100px 0
+
+  .items
+    &.popular-items
+      padding: 100px 0 0
+
+  .advantages
+    padding: 100px 0
+
+  .text-block
+    padding-top: 100px
+
+  .our-location
+    padding: 100px 0
+
+  .cart-payment-data
+    .shipping_address
+      #shipping_house_field, #shipping_tel_field
+        flex-basis: 100%
+      #shipping_corpus_field, #shipping_flat_field, #shipping_date_field, #shipping_time_field
+        flex-basis: calc(50% - 6px)
+
+@media (max-width: 576px)
+  .single-item
+    &-property
+      ul
+        width: 100%
+    .text-block
+      padding-bottom: 100px
+
+  .contact-page
+    padding-bottom: 100px
+    &-column
+      form
+        width: 100%
+
+  .woocommerce-order
+    padding-bottom: 100px
+    h2
+      font-size: 26px
+
+  .container, .catalog-sidebar-block
+    width: 100%
+
+  .main-footer
+    &-menu
+      flex-basis: 100%
+
+  .contact-form
+    form
+      width: 100%
+
+@media (min-width: 480px) and (max-width: 768px)
+  .items-card
+    max-width: 335px
+    margin: 0 auto
+
+@media (min-width: 480px) and (max-width: 576px)
+
+  .contact-page
+    &-block
+      margin-bottom: 100px
+    &-map
+      height: 250px
+
+  .home
+    &-slide
+      &-text
+        h2
+          font-size: 32px
+          line-height: 40px
+        p
+          font-size: 16px
+          line-height: 24px
+
+  .contact-form
+    &-heading
+      h2
+        font-size: 32px
+        line-height: 40px
+      p
+        font-size: 18px
+        line-height: 24px
+
+  .heading
+    h2, h1
+      font-size: 26px
+      line-height: 32px
+
+  .text-block
+    p
+      font-size: 16px
+      line-height: 24px
+
+@media (max-width: 480px)
+  .catalog
+    .show-more
+      a
+        width: 100%
+    &-page-nav
+      flex-direction: column
+      row-gap: 15px
+      padding: 0
+
+  .single-item
+    &-slider-big
+      .single-item-slide
+        &-info
+          top: 0
+          left: 0
+        &-container
+          padding-top: 35px
+    &-price
+      flex-direction: column
+      row-gap: 10px
+      .price
+        font-size: 20px
+        line-height: 26px
+
+  .contact-page
+    &-map
+      height: 200px
+    &-block
+      margin-bottom: 75px
+    &-info
+      h2
+        font-size: 22px
+        line-height: 30px
+      p
+        font-size: 16px
+        line-height: 24px
+    &-heading
+      font-size: 16px
+      line-height: 24px
+    &-column
+      form
+        p
+          align-items: center
+      p
+        flex-direction: column
+        span
+          margin-top: 15px
+  .woocommerce-order_container
+    padding: 25px 10px
+    a
+      width: 100%
+
+  .cart-payment-data
+    .shipping_address
+      #shipping_house_field, #shipping_tel_field, #shipping_corpus_field, #shipping_flat_field, #shipping_date_field, #shipping_time_field
+        flex-basis: 100%
+    .woocommerce-billing-fields a
+      width: 100%
+
+  .cart-payment
+    padding: 75px 0 100px
+    &-container
+      padding-top: 75px
+    &-info-container
+      padding: 25px
+
+
+  .top-header
+    .container
+      flex-direction: column
+      align-items: center
+      row-gap: 10px
+
+  .home
+    &-slide
+      &-text
+        h2
+          font-size: 24px
+          line-height: 30px
+        p
+          font-size: 16px
+          line-height: 24px
+
+  .items
+    &.popular-items
+      padding: 75px 0 0
+
+  .heading
+    h2, h1
+      font-size: 24px
+      line-height: 30px
+    p
+      font-size: 16px
+      line-height: 24px
+
+  .advantages
+    padding: 75px 0
+
+  .contact-form
+    .warning
+      margin-top: 0
+    &-heading
+      h2
+        font-size: 24px
+        line-height: 30px
+      p
+        font-size: 16px
+        line-height: 24px
+    form
+      p
+        row-gap: 15px
+        span
+          flex-basis: 100%
+      input[type=submit]
+        margin-top: 0
+
+  .text-block
+    padding-top: 75px
+    p
+      font-size: 16px
+      line-height: 24px
+
+  .our-location
+    padding: 75px 0 100px
+    &-column
+      width: 100%
+    &-contact
+      width: 100%
+      padding: 5px 10px 15px
+
+  .main-footer
+    &-bottom
+      .payment
+        row-gap: 10px
+        flex-wrap: wrap
+        li
+          margin: 0!important
+          flex-basis: 50%
+          text-align: center

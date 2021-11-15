@@ -55,8 +55,8 @@
         </div>
         <?php endif; ?>
         <div class="bottom-header-search">
-            <form action="#">
-                <input type="text" placeholder="Вы ищите, мы находим">
+            <form action="<?php bloginfo( 'url' ); ?>" method="get">
+                <input name="s" value="<?php if(!empty($_GET['s'])){ echo $_GET['s']; } ?>" type="text" placeholder="Вы ищите, мы находим">
                 <button><img src="<?php echo get_template_directory_uri(); ?>/assets/img/search.png" alt="Поиск"></button>
             </form>
         </div>
@@ -70,6 +70,8 @@ $args = [
     'orderby'       => 'id',
     'order'         => 'DESC',
     'parent'        => 0,
+    'number'        => count(get_field('cat_menu', 'options')),
+    'include'       => get_field('cat_menu', 'options'),
     'hide_empty'    => false,
     'exclude'       => array(15),
     'update_term_meta_cache' => true,
@@ -88,11 +90,20 @@ if($terms):
                     $img = get_term_meta($term->term_id, 'thumbnail_id');
                     $img_url = wp_get_attachment_url($img[0]); ?>
                     <li><a href="<?php echo get_term_link($term->term_id) ?>"><img src="<?php echo $img_url ?>" alt=""><span><?php echo $term->name ?></span></a></li>
-                <?php endforeach; 
+                <?php endforeach;
                 ?>
-                <li class="stocks"><a href="#"><span>Акции</span> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat-icon-7.png" alt=""></a></li>
+                <li class="stocks"><a href="<?php echo get_field('shop_page', 'options')['url'].'?status=37'; ?>"><span>Акции</span> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat-icon-7.png" alt=""></a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+<div class="mobile-nav">
+    <div class="container">
+        <div class="mobile-cat-btn">
+            <span></span><span></span><span></span>
+        </div>
+        <?php chair_woocommerce_cart_link() ?>
+    </div>
+</div>
 <?php endif ?>
